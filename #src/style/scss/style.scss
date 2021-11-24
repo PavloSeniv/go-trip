@@ -1,0 +1,61 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+
+@import "_fonts";
+//@import "_libs";
+@import "_media";
+@import "_nullstyle";
+@import "_vars";
+
+/*-------- Page Index Start -------*/
+/*-------- All Start -------*/
+* {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  color: #000000;
+}
+
+::selection {
+  color: #ffffff;
+  background-color: #ec0f16;
+}
+
+.__container {
+  max-width: 1920px;
+  margin: 0 67px 0 76px;
+  @media (max-width: 1199px) {
+    margin: 0 15px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+  background-color: #bdbdbd;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ec0f16;
+  background-image: -webkit-gradient(
+    linear,
+    0 0,
+    0 100%,
+    color-stop(0.5, rgba(255, 255, 255, 0.25)),
+    color-stop(0.5, transparent),
+    to(transparent)
+  );
+}
+
+/*-------- All End -------*/

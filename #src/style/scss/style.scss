@@ -14,26 +14,31 @@
 @import "_nullstyle";
 @import "_vars";
 
+// @import "../css/_style_header";
+// @import "../css/_style_footer";
+
 /*-------- Page Index Start -------*/
 /*-------- All Start -------*/
+body {
+  background-color: #000000;
+}
 * {
   font-family: Montserrat;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 17px;
   color: #000000;
 }
 
 ::selection {
   color: #ffffff;
-  background-color: #ec0f16;
+  background-color: #1f5e37;
 }
 
 .__container {
-  max-width: 1920px;
-  margin: 0 67px 0 76px;
+  max-width: 1440px;
+  margin: 0 auto;
   @media (max-width: 1199px) {
-    margin: 0 15px;
   }
 }
 
@@ -47,7 +52,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #ec0f16;
+  background-color: #1f5e37;
   background-image: -webkit-gradient(
     linear,
     0 0,
@@ -59,3 +64,7 @@
 }
 
 /*-------- All End -------*/
+
+.main{
+
+}

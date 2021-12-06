@@ -27,12 +27,12 @@ body {
   font-style: normal;
   font-weight: 400;
   font-size: 17px;
-  color: #000000;
+  color: #ffffff;
 }
 
 ::selection {
   color: #ffffff;
-  background-color: #1f5e37;
+  background-color: #000;
 }
 
 .__container {
@@ -65,6 +65,16 @@ body {
 
 /*-------- All End -------*/
 
-.main{
-
+.main {
+  background-color: #e5e5e5;
+  height: 100vh;
 }
+
+.main_bg {
+  width: 100%;
+  background-image: url(../../img/index/main-bg.png);
+  height: 100vh;
+}
+
+@import "_vars";
+@import "header/_style_header";

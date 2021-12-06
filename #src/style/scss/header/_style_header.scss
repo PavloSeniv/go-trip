@@ -19,7 +19,7 @@ body._lock {
   width: 100%;
   z-index: 10;
   background-color: var(--header-bg-color);
-  font-family: var(--header-font-family);
+  font-family: Poppins;
   border-bottom: 1px solid var(--header-bg-color);
 
   @media (max-width: 1199px) {
@@ -35,30 +35,23 @@ body._lock {
   min-height: 100px;
   flex-direction: row;
   column-gap: 50px;
+  align-items: center;
 
   @media (max-width: 1199px) {
-   
   }
 
   @media (max-width: 1599px) {
-   
   }
 }
 
 .header__block-logo {
-  display: flex;
-  padding: 22px 0 0 0;
-  justify-content: center;
-
   @media (max-width: 1199px) {
-  
   }
 }
 
 .header__block-nav {
   width: 100%;
 }
-
 
 .header__logo {
   position: relative;
@@ -68,6 +61,12 @@ body._lock {
   align-items: center;
   flex-direction: column;
   justify-content: center;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
 
   @media (max-width: 1399px) {
   }
@@ -83,13 +82,6 @@ body._lock {
 
 .header__logo-mobile-title._active {
   display: block;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 21px;
-  text-transform: uppercase;
-  color: #000;
   z-index: 5;
   position: relative;
   top: -22px;
@@ -105,24 +97,24 @@ body._lock {
   column-gap: 24px;
   row-gap: 41px;
   align-items: center;
-  grid-template-areas:
-    "menu__nav menu__list-link-login menu__list-link-log-up";
+  grid-template-areas: "menu__nav log-in-out";
   justify-items: start;
   align-content: space-between;
 
   @media (max-width: 1399px) {
-   grid-template-areas:
-    "menu__nav menu__list-link-login menu__list-link-log-up";
+    grid-template-areas: "menu__nav menu__list-link-login menu__list-link-log-up";
   }
 
   @media (max-width: 1699px) {
-     grid-template-areas:
-    "menu__nav menu__list-link-login menu__list-link-log-up";
+    grid-template-areas: "menu__nav log-in-out";
   }
 }
 
 .menu__nav {
+  display: flex;
+  width: 100%;
   grid-area: menu__nav;
+  justify-content: center;
   @media (max-width: 1399px) {
     width: 100%;
   }
@@ -134,13 +126,10 @@ body._lock {
 
 .menu__list > li {
   position: relative;
-  height: 100%;
+  height: 20px;
   text-align: center;
-  text-transform: uppercase;
-  padding: 0 0 8px 0px;
 
   @media (max-width: 1199px) {
-    padding: 0 0 0 0;
     text-align: center;
   }
 }
@@ -180,22 +169,25 @@ body._lock {
   width: 100%;
   height: 100%;
   justify-content: flex-end;
-  text-transform: uppercase;
 
   @media (max-width: 1399px) {
     justify-content: center;
     align-items: center;
   }
 }
-
-.menu__list-link-sign-up {
+.log-in-out {
   width: 100%;
-  grid-area: menu__list-link-log-up;
+  display: flex;
+  grid-area: log-in-out;
+  align-items: center;
+  justify-content: center;
+}
+.menu__list-link-sign-up {
+  width: 100px;
   display: flex;
   align-items: flex-end;
   height: 100%;
   justify-content: flex-end;
-  text-transform: uppercase;
 
   @media (max-width: 1399px) {
     justify-content: center;
@@ -214,10 +206,10 @@ body._lock {
 }
 
 .menu__login {
-  color: #ec0f16;
+  color: #fff;
 
   &:hover {
-    color: #cd1319;
+    color: #000;
   }
 
   @media (max-width: 1199px) {
@@ -235,12 +227,15 @@ body._lock {
     }
   }
 }
-.menu__list-link:hover::after{
-content: "";
-display: block;
-background-color: #000;
-height: 2px;
-width: 90%;
+.menu__list-link:hover::after {
+  content: "";
+  display: block;
+  background-color: #c4c4c4;
+
+  width: 35px;
+  height: 4px;
+
+  border-radius: 100px;
 }
 .menu__list-link-button-2 {
   display: flex;
@@ -253,10 +248,16 @@ width: 90%;
 }
 
 .menu__sign-up {
-  color: #000;
-
+    display: flex;
+    color: #fff;
+    width: 128px;
+    height: 49px;
+    background: linear-gradient(129.54deg,#ff7b4e 15.57%,#ff584e 95.03%),#fff;
+    border-radius: 100px;
+    align-items: center;
+    justify-content: center;
   &:hover {
-    color: #333;
+    color: #000;
   }
 
   @media (max-width: 1199px) {
@@ -275,12 +276,11 @@ width: 90%;
   }
 }
 
-
 .menu__button-1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #ec0f16;
+  background: #000;
   border-radius: 5px;
   width: 220px;
   height: 48px;
@@ -344,21 +344,11 @@ width: 90%;
 }
 
 .menu__link {
-  @media (min-width: 1200px) {
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 15px;
-    line-height: 18px;
-  }
-
-  @media (min-width: 1200px) and (max-width: 1399px) {
-    font-size: 12px;
-  }
-
-  @media (min-width: 1400px) and (max-width: 1799px) {
-    font-size: 12px;
-  }
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22px;
 }
 
 @media (max-width: 1199px) {

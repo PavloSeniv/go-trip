@@ -8,7 +8,7 @@ Project Name Description
 
 ## Demo
 
-https://pavloseniv.github.io/
+https://pavloseniv.github.io/go-trip/go-trip/index.html
 
 ## Screenshots
 

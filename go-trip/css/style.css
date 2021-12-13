@@ -640,7 +640,7 @@ body._lock {
   font-size: 22px;
   line-height: 33px;
   color: #0f1f1c;
-  opacity: .5;
+  opacity: 0.5;
   letter-spacing: 1px;
   margin-top: 48px;
 }
@@ -699,6 +699,65 @@ body._lock {
 /*-------- Tourists End -------*/
 
 /*-------- Exploring Start -------*/
+
+.exploring {
+  background-color: #e5e5e5;
+}
+
+.exploring__container {
+  padding: 105px 100px;
+}
+
+.exploring__block {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 60px;
+  padding: 102px 102px 130px 102px;
+  align-items: center;
+  justify-content: center;
+}
+
+.exploring__title {
+  width: 519px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 67px;
+  color: #0f1f1c;
+}
+
+.exploring__subtitle {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 45px;
+  color: #0f1f1c;
+  opacity: .5;
+  margin-top: 33px;
+}
+
+.exploring__button {
+  width: 225px;
+  height: 79px;
+  background: linear-gradient(129.54deg, #ff7b4e 15.57%, #ff584e 95.03%);
+  border-radius: 27px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 57px;
+}
+
+.exploring__link {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+}
 
 /*-------- Exploring End -------*/
 

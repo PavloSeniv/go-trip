@@ -857,6 +857,67 @@ body._lock {
 
 /*-------- Subcripe End -------*/
 
+.footer {
+  margin: 0 auto;
+  max-width: 1440px;
+  background-color: #e5e5e5;
+}
+
+.footer__copy-header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__container {
+  padding: 0 100px;
+}
+
+.footer__logo {
+  color: #ff7c4e;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.footer__log-in-out {
+  width: unset !important;
+}
+
+.footer__log-in-out .menu__list-link-sign-up a {
+  color: #fff;
+}
+
+.footer__log-in-out .menu__list-link-sign-up a:hover {
+  color: #000;
+}
+
+.footer__log-in-out a {
+  color: #0f1f1c;
+}
+
+.footer__block-nav a {
+  color: #0f1f1c;
+}
+
+.footer__security-police {
+  margin-top: 22px;
+  padding-bottom: 34px;
+  text-align: center;
+}
+
+.footer__security-police p {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+  color: #000;
+}
+
 @media (max-width: 1399px) {
   .menu__list-link-login {
     justify-content: center;

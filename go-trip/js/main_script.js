@@ -107,7 +107,7 @@ if (menuLinks.length > 0) {
     }
 }
 
-//var mainSceneAuto = document.getElementById("main__scene-auto");
+var mainSceneAuto = document.getElementById("main-photo");
 var parallax = new Parallax(mainSceneAuto, {
   hoverOnly: true,
   relativeInput: true,

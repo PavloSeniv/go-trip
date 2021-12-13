@@ -492,8 +492,9 @@ body._lock {
 .slider__container {
   display: flex;
   background-color: #e5e5e5;
-  padding: 0 100px;
+  padding: 0 0 0 100px;
   padding-bottom: 100px;
+  overflow: hidden;
 }
 
 .info {
@@ -552,6 +553,11 @@ body._lock {
   font-size: 20px;
   line-height: 30px;
   color: #FEFEFE;
+}
+
+.__container-swiper {
+  margin-top: 110px;
+  max-width: 1408px;
 }
 
 @media (max-width: 1399px) {

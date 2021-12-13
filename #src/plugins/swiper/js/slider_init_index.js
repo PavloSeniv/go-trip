@@ -95,34 +95,34 @@ let SliderHome = new Swiper('.swiper-container', {
     autoHeight: true,
     */
 
-    /*
-    slidesPerView: 2, // | 'auto' | 2.5
-    */
+ 
+    slidesPerView:3, // | 'auto' | 2.5
+  
 
     /*
     // Відключення функціоналу, якщо слайдів менше ніж потрібно
     watchOverflow: true,
     */
 
-    /*
-    // Відступ між слайдами
-    spaceBetween: 30,
-    */
+   
+    // // Відступ між слайдами
+    // spaceBetween: 10,
+  
 
-    /*
+
     // К-сть прогорнутих слайдів
-    slidesPerGroup: 3,
-    */
+    slidesPerGroup: 1,
+ 
 
     /*
     // Активний слайд по центру
     centeredSlides: true,
     */
 
-    /*
+
     // Стратовий слайд
     initialSlide: 1,
-    */
+   
 
     /*
     // Мультирядність
@@ -130,11 +130,11 @@ let SliderHome = new Swiper('.swiper-container', {
     */
 
 // Бескінечність
-    loop: true,
+     loop: true,
 
 
 // К-сть дубльованих слайдів
-    loopedSlides: 3,
+  loopedSlides: 3,
 
 
     /*
@@ -159,20 +159,20 @@ let SliderHome = new Swiper('.swiper-container', {
 // Вертикальний слайдер
     direction: 'horizontal',
 
-    /*
+    
     // Ефекти перемикання слайдів
     // Перегортування
-    effect: 'slide', // Ефект по дефолту
-    */
+    // effect: 'slide', // Ефект по дефолту
+   
 
 
-// Заміна прозорості
-    effect: 'fade',
-// Доповнення до fade
-    fadeEffect: {
-// Паралельна зміна прозорості
-        crossFade: true
-    },
+// // Заміна прозорості
+//     effect: 'fade',
+// // Доповнення до fade
+//     fadeEffect: {
+// // Паралельна зміна прозорості
+//         crossFade: true
+//     },
 
     /*
     // Переворот
@@ -199,7 +199,7 @@ let SliderHome = new Swiper('.swiper-container', {
     },
     */
 
-    /*
+   
     // Потік
     effect: 'coverflow',
     coverflowEffect: {
@@ -210,7 +210,7 @@ let SliderHome = new Swiper('.swiper-container', {
     //Тінь
     slideShadows: false,
     },
-    */
+
 
     /*
     // Брейкпоінти (адаптив)

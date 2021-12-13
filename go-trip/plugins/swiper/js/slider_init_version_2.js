@@ -21,8 +21,7 @@ let SliderOtherPage = new Swiper('.swiper-container', {
         },
     },
 
-// Навігація по хешу
-    hashNavigation: {
+// Навігація по хешу    hashNavigation: {
 // Відстужувати стан
         watchState: true,
     },

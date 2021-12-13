@@ -376,13 +376,13 @@ body {
     color: #0f1f1c;
   }
   &__subtitle {
-       font-family: Poppins;
+    font-family: Poppins;
     font-style: normal;
     font-weight: 400;
     font-size: 30px;
     line-height: 45px;
     color: #0f1f1c;
-    opacity: .5;
+    opacity: 0.5;
     margin-top: 33px;
   }
   &__button {
@@ -408,5 +408,70 @@ body {
 /*-------- Exploring End -------*/
 
 /*-------- Subcripe Start -------*/
+.subscripe {
+  background-color: #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__container {
+    padding: 21px 106px 106px 106px;
+  }
+  &__title {
+    width: 494px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 55px;
+    line-height: 82px;
+    text-align: center;
+    color: #0f1f1c;
+  }
+  &__block {
+    width: 800px;
+    background: linear-gradient(0deg, #ffffff, #ffffff), #c4c4c4;
+    border-radius: 35px;
+    padding: 12px 15px 12px 46px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+  }
+  &__input {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    color: #000;
+    opacity: 0.5;
+    &::placeholder {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 36px;
+      color: #0f1f1c;
+      opacity: 0.5;
+    }
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  &__button {
+    width: 300px;
+    height: 105px;
+    left: 805px;
+    top: 3416px;
+
+    background: linear-gradient(129.54deg, #ff7b4e 15.57%, #ff584e 95.03%), #ffffff;
+    border-radius: 35px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 37px;
+    color: #ffffff;
+  }
+}
 
 /*-------- Subcripe End -------*/

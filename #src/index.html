@@ -17,7 +17,7 @@
   <!-- <link rel="icon" href="img/favicon.png" type="image/png"> -->
 
   <!-- ======== AOS style ======== -->
-  <!-- <link rel="stylesheet" href="plugins/aos/dist/aos.min.css"> -->
+  <link rel="stylesheet" href="plugins/aos/dist/aos.min.css">
 
   <!-- ======== Bootstrap style ======== -->
   <!-- <link rel="stylesheet" href="plugins/bootstrap_5.1.0/dist/css/bootstrap.min.css"> -->
@@ -38,12 +38,13 @@
 
 
   <div class="__container">
-    
+
     @@include('./html/_header_grid.html')
+
     <main class="main">
 
       <div class="main__bg">
-        
+
         <div class="main-scene" id="man-scene">
           <div class="main-scene__info">
             <p class="main-scene__sub-title">
@@ -64,7 +65,88 @@
             <img class="main-scene__img" src="../img/index/main_man-bg.png" alt="main_man-bg">
           </div>
         </div>
+
+        <div class="eclipse-scene eclipse-scene__main-1">
+          <div class="eclipse-scene__big" data-aos="zoom-in" data-aos-delay="500">
+            <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle opacity="0.5" cx="15.5" cy="15.5" r="15.5" fill="#4E887A" />
+            </svg>
+
+          </div>
+          <div class="eclipse-scene__middle" data-aos="zoom-in" data-aos-delay="300">
+            <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle opacity="0.5" cx="10.5" cy="10.5" r="10.5" fill="#4E887A" />
+            </svg>
+
+          </div>
+          <div class="eclipse-scene__little" data-aos="zoom-in" data-aos-delay="100">
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle opacity="0.5" cx="8.5" cy="8.5" r="8.5" fill="#4E887A" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="eclipse-scene eclipse-scene__main-2">
+          <div class="eclipse-scene__big" data-aos="zoom-in" data-aos-delay="500">
+            <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle opacity="0.5" cx="15.5" cy="15.5" r="15.5" fill="#4E887A" />
+            </svg>
+
+          </div>
+          <div class="eclipse-scene__middle" data-aos="zoom-in" data-aos-delay="300">
+            <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle opacity="0.5" cx="10.5" cy="10.5" r="10.5" fill="#4E887A" />
+            </svg>
+
+          </div>
+          <div class="eclipse-scene__little" data-aos="zoom-in" data-aos-delay="100">
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle opacity="0.5" cx="8.5" cy="8.5" r="8.5" fill="#4E887A" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="wawe-scene wawe-scene__one-scene">
+          <div class="wawe-scene__one">
+            <svg width="90" height="39" viewBox="0 0 90 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path opacity="0.5"
+                d="M7 32L21.7972 17.3975C27.6386 11.633 37.0281 11.633 42.8695 17.3975L47.1305 21.6025C52.9719 27.367 62.3614 27.367 68.2028 21.6025L83 7"
+                stroke="#4E887A" stroke-width="13" stroke-linecap="round" />
+            </svg>
+
+          </div>
+
+          <div class="wawe-scene__two">
+            <svg width="90" height="39" viewBox="0 0 90 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path opacity="0.5"
+                d="M7 32L21.7972 17.3975C27.6386 11.633 37.0281 11.633 42.8695 17.3975L47.1305 21.6025C52.9719 27.367 62.3614 27.367 68.2028 21.6025L83 7"
+                stroke="#4E887A" stroke-width="13" stroke-linecap="round" />
+            </svg>
+
+          </div>
+        </div>
+
+        <div class="wawe-scene wawe-scene__two-scene">
+          <div class="wawe-scene__one">
+            <svg width="90" height="39" viewbox="0 0 90 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path opacity="0.5"
+                d="M7 32L21.7972 17.3975C27.6386 11.633 37.0281 11.633 42.8695 17.3975L47.1305 21.6025C52.9719 27.367 62.3614 27.367 68.2028 21.6025L83 7"
+                stroke="#4E887A" stroke-width="13" stroke-linecap="round" />
+            </svg>
+
+          </div>
+
+          <div class="wawe-scene__two">
+            <svg width="90" height="39" viewbox="0 0 90 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path opacity="0.5"
+                d="M7 32L21.7972 17.3975C27.6386 11.633 37.0281 11.633 42.8695 17.3975L47.1305 21.6025C52.9719 27.367 62.3614 27.367 68.2028 21.6025L83 7"
+                stroke="#4E887A" stroke-width="13" stroke-linecap="round" />
+            </svg>
+
+          </div>
+        </div>
       </div>
+
     </main>
 
     <section class="slider__container">
@@ -141,6 +223,26 @@
         <p class="exploring__subtitle">There's the best discount for you today.</p>
         <div class="exploring__button">
           <a class="exploring__link" href="#" target="__blank">Get Started</a>
+        </div>
+
+        <div class="eclipse-scene eclipse-scene__main-3">
+          <div class="eclipse-scene__big" data-aos="zoom-in" data-aos-delay="500">
+            <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle opacity="0.5" cx="15.5" cy="15.5" r="15.5" fill="#4E887A" />
+            </svg>
+
+          </div>
+          <div class="eclipse-scene__middle" data-aos="zoom-in" data-aos-delay="300">
+            <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle opacity="0.5" cx="10.5" cy="10.5" r="10.5" fill="#4E887A" />
+            </svg>
+
+          </div>
+          <div class="eclipse-scene__little" data-aos="zoom-in" data-aos-delay="100">
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle opacity="0.5" cx="8.5" cy="8.5" r="8.5" fill="#4E887A" />
+            </svg>
+          </div>
         </div>
       </div>
     </section>

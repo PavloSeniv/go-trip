@@ -214,6 +214,68 @@ body {
   overflow: hidden;
 }
 
+.eclipse-scene {
+  position: absolute;
+  z-index: 3;
+}
+
+.eclipse-scene__main-1 {
+  left: 48.5%;
+  top: 18.5%;
+}
+
+.eclipse-scene__main-2 {
+  right: 6%;
+  top: 76%;
+}
+
+.eclipse-scene__main-3 {
+  right: 6%;
+  top: 10%;
+}
+
+.eclipse-scene__big {
+  position: relative;
+  left: -1px;
+}
+
+.eclipse-scene__middle {
+  position: relative;
+  top: 8px;
+  left: -1px;
+}
+
+.eclipse-scene__little {
+  position: relative;
+  top: -30px;
+  left: 29px;
+}
+
+.wawe-scene {
+  position: absolute;
+  z-index: 3;
+}
+
+.wawe-scene__one-scene {
+  bottom: 5.1%;
+  left: 49.5%;
+}
+
+.wawe-scene__two-scene {
+  top: 24.5%;
+  right: 11.8%;
+}
+
+.wawe-scene__one {
+  position: relative;
+}
+
+.wawe-scene__two {
+  position: relative;
+  left: 80px;
+  top: -30px;
+}
+
 :root {
   --header-bg-color: #ffffff;
   --header-width-container: 1408px;
@@ -716,6 +778,7 @@ body._lock {
   padding: 102px 102px 130px 102px;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .exploring__title {

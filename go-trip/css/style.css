@@ -204,13 +204,14 @@ body {
   height: 100vh;
 }
 
-.main_bg {
+.main__bg {
   width: 1440px;
   background-image: url(../img/index/main-bg.png);
   background-repeat: no-repeat;
   height: 100vh;
   position: absolute;
   z-index: 2;
+  overflow: hidden;
 }
 
 :root {
@@ -247,9 +248,8 @@ body._lock {
 }
 
 .header {
-  position: static;
-  top: 0;
-  left: 0;
+  max-width: 1440px;
+  position: absolute;
   width: 100%;
   z-index: 10;
   background-color: var(--header-bg-color);
@@ -406,18 +406,19 @@ body._lock {
   line-height: 22px;
 }
 
-.main2 {
+.main-scene {
+  margin-top: 138px;
   padding: 41px 100px;
   display: flex;
   position: absolute;
   z-index: 3;
 }
 
-.main__info {
+.main-scene__info {
   flex: 0 0 50%;
 }
 
-.main__sub-title {
+.main-scene__sub-title {
   display: flex;
   width: 227px;
   height: 50px;
@@ -432,7 +433,7 @@ body._lock {
   line-height: 27px;
 }
 
-.main__title {
+.main-scene__title {
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
@@ -443,7 +444,7 @@ body._lock {
   letter-spacing: 1.5px;
 }
 
-.main__sup-title {
+.main-scene__sup-title {
   font-family: Poppins;
   font-style: normal;
   font-weight: 500;
@@ -455,7 +456,7 @@ body._lock {
   letter-spacing: 0.9px;
 }
 
-.main__button {
+.main-scene__button {
   display: flex;
   width: 263px;
   height: 91px;
@@ -464,27 +465,26 @@ body._lock {
   align-items: center;
   justify-content: center;
   margin-top: 68px;
+  color: #fefefe;
 }
 
-.main__button a {
+.main-scene__button:hover {
+  color: #000;
+  background: linear-gradient(100.54deg, #ff7b4e 20.57%, #ff584e 86.03%);
+  cursor: pointer;
+}
+
+.main-scene__button a {
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
   font-size: 25px;
   line-height: 37px;
-  color: #fefefe;
 }
 
-.main-photo {
-  position: absolute;
-  top: 0;
-  left: 450px;
-  z-index: 1;
-  background-image: url(../img/index/main_man.png);
-  height: 99%;
-  width: 65%;
-  background-repeat: no-repeat;
-  background: 50% 0;
+.main-scene__photo {
+  flex: 0 0 50%;
+  left: 57% !important;
 }
 
 /*-------- Main End -------*/
@@ -1090,8 +1090,7 @@ body._lock {
   }
 }
 @supports (-webkit-appearance:none){
-.main_bg{background-image:url(../img/index/main-bg.webp)}
-.main-photo{background-image:url(../img/index/main_man.webp)}
+.main__bg{background-image:url(../img/index/main-bg.webp)}
 }
 
  @media (max-width: 1399px){

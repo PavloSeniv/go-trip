@@ -68,27 +68,28 @@ body {
 .main {
   background-color: #e5e5e5;
   height: 100vh;
-}
 
-.main_bg {
-  width: 1440px;
-  background-image: url(../img/index/main-bg.png);
-  background-repeat: no-repeat;
-  height: 100vh;
-  position: absolute;
-  z-index: 2;
+  &__bg {
+    width: 1440px;
+    background-image: url(../img/index/main-bg.png);
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: absolute;
+    z-index: 2;
+    overflow: hidden;
+  }
 }
 
 @import "_vars";
 @import "header/_style_header";
 
-.main2 {
+.main-scene {
+  margin-top: 138px;
   padding: 41px 100px;
   display: flex;
   position: absolute;
   z-index: 3;
-}
-.main {
+
   &__info {
     flex: 0 0 50%;
   }
@@ -107,6 +108,7 @@ body {
     font-size: 18px;
     line-height: 27px;
   }
+
   &__title {
     font-family: Poppins;
     font-style: normal;
@@ -117,6 +119,7 @@ body {
     margin-top: 8px;
     letter-spacing: 1.5px;
   }
+
   &__sup-title {
     font-family: Poppins;
     font-style: normal;
@@ -138,29 +141,27 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 68px;
+    color: #fefefe;
+    &:hover {
+      color: #000;
+      background: linear-gradient(100.54deg, #ff7b4e 20.57%, #ff584e 86.03%);
+      cursor: pointer;
+    }
     & a {
       font-family: Poppins;
       font-style: normal;
       font-weight: 600;
       font-size: 25px;
       line-height: 37px;
-
-      color: #fefefe;
     }
   }
-}
-.main-photo {
-  position: absolute;
-  top: 0;
-  left: 450px;
-  z-index: 1;
-  background-image: url(../img/index/main_man.png);
-  height: 99%;
-  width: 65%;
-  background-repeat: no-repeat;
 
-  background: 50% 0;
+  &__photo {
+    flex: 0 0 50%;
+    left: 57% !important;
+  }
 }
+
 /*-------- Main End -------*/
 
 /*-------- Slider Start -------*/
@@ -452,7 +453,7 @@ body {
       color: #0f1f1c;
       opacity: 0.5;
     }
-    &:hover{
+    &:hover {
       cursor: pointer;
     }
   }

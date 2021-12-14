@@ -38,32 +38,32 @@
 
 
   <div class="__container">
-
+    
+    @@include('./html/_header_grid.html')
     <main class="main">
 
-      <div class="main_bg">
-
-        @@include('./html/_header_grid.html')
-
-        <div class="main2">
-
-          <div class="main__info">
-            <p class="main__sub-title">
+      <div class="main__bg">
+        
+        <div class="main-scene" id="man-scene">
+          <div class="main-scene__info">
+            <p class="main-scene__sub-title">
               exsplore the world
             </p>
-            <h1 class="main__title">
+            <h1 class="main-scene__title">
               Explore The Natural
               Beauty Of Halmahera
               With Us
             </h1>
-            <p class="main__sup-title">explore the beauty of god's earth in a beautiful forest and have fun</p>
-            <div class="main__button">
-              <a class="" href="#">Exsplore Now</a>
+            <p class="main-scene__sup-title">explore the beauty of god's earth in a beautiful forest and have fun</p>
+            <div class="main-scene__button">
+              <a class="main-scene__link" href="#">Exsplore Now</a>
             </div>
           </div>
-        </div>
 
-        <div id="main-photo" class="main-photo"></div>
+          <div data-depth="0.2" class="main-scene__photo">
+            <img class="main-scene__img" src="../img/index/main_man-bg.png" alt="main_man-bg">
+          </div>
+        </div>
       </div>
     </main>
 

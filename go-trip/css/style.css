@@ -541,10 +541,10 @@ body._lock {
 }
 
 .main-scene__title {
+  font-size: calc(23px + 32 * ((100vw - 320px) / 1120));
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
-  font-size: 55px;
   line-height: 82.5px;
   color: #fff;
   margin-top: 8px;

@@ -13,6 +13,7 @@
 @import "_media";
 @import "_nullstyle";
 @import "_vars";
+@import "_mixin";
 
 // @import "../css/_style_header";
 
@@ -216,10 +217,10 @@ body {
   }
 
   &__title {
+    @include adaptiv-font(55,23);
     font-family: Poppins;
     font-style: normal;
     font-weight: 600;
-    font-size: 55px;
     line-height: 82.5px;
     color: #fff;
     margin-top: 8px;

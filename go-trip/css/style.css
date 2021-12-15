@@ -299,6 +299,28 @@ body {
   top: -30px;
 }
 
+.bg-triangle-left {
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 136px solid #e5e5e5;
+  border-right: 660px solid transparent;
+}
+
+.bg-triangle-right {
+  position: absolute;
+  z-index: 4;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 136px solid #e5e5e5;
+  border-left: 660px solid transparent;
+}
+
 :root {
   --header-bg-color: #ffffff;
   --header-width-container: 1408px;

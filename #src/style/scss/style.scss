@@ -81,53 +81,82 @@ body {
 }
 
 .eclipse-scene {
+  position: absolute;
+  z-index: 3;
+
   &__main-1 {
     left: 48.5%;
     top: 18.5%;
   }
   &__main-2 {
-    right: 6%;
-    top: 76%;
+    right: 5.5%;
+    bottom: 14.7%;
   }
 
   &__main-3 {
-    right: 6%;
+    right: 8.1%;
     top: 10%;
   }
-  
-  position: absolute;
-  z-index: 3;
 
+  &__main-4 {
+    transform: rotate(180deg);
+    bottom: 12%;
+    left: 7.5%;
+  }
+  
   &__big {
     position: relative;
     left: -1px;
   }
+
+   &__big-exploring {
+    position: relative;
+    left: -1px;
+  }
+
   &__middle {
     position: relative;
     top: 8px;
     left: -1px;
   }
+ 
+  &__middle-exploring {
+    position: relative;
+    top: 12px;
+    left: -1px;
+  }
+
   &__little {
     position: relative;
     top: -30px;
     left: 29px;
+  }
+
+  &__little-exploring {
+    position: relative;
+    top: -34px;
+    left: 39px;
   }
 }
 
 .wawe-scene {
   position: absolute;
   z-index: 3;
+
   &__one-scene {
     bottom: 5.1%;
     left: 49.5%;
   }
+
    &__two-scene {
     top: 24.5%;
     right: 11.8%;
   }
+
   &__one {
     position: relative;
   }
+  
   &__two {
     position: relative;
     left: 80px;

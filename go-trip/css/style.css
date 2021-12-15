@@ -225,16 +225,27 @@ body {
 }
 
 .eclipse-scene__main-2 {
-  right: 6%;
-  top: 76%;
+  right: 5.5%;
+  bottom: 14.7%;
 }
 
 .eclipse-scene__main-3 {
-  right: 6%;
+  right: 8.1%;
   top: 10%;
 }
 
+.eclipse-scene__main-4 {
+  transform: rotate(180deg);
+  bottom: 12%;
+  left: 7.5%;
+}
+
 .eclipse-scene__big {
+  position: relative;
+  left: -1px;
+}
+
+.eclipse-scene__big-exploring {
   position: relative;
   left: -1px;
 }
@@ -245,10 +256,22 @@ body {
   left: -1px;
 }
 
+.eclipse-scene__middle-exploring {
+  position: relative;
+  top: 12px;
+  left: -1px;
+}
+
 .eclipse-scene__little {
   position: relative;
   top: -30px;
   left: 29px;
+}
+
+.eclipse-scene__little-exploring {
+  position: relative;
+  top: -34px;
+  left: 39px;
 }
 
 .wawe-scene {

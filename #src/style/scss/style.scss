@@ -213,7 +213,10 @@ body {
 
   &__photo {
     flex: 0 0 50%;
-    left: 57% !important;
+    user-select: none;
+  }
+  &__human {
+    left: 5%!important;
   }
 }
 

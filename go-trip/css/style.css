@@ -546,7 +546,14 @@ body._lock {
 
 .main-scene__photo {
   flex: 0 0 50%;
-  left: 57% !important;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.main-scene__human {
+  left: 5% !important;
 }
 
 /*-------- Main End -------*/

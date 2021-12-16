@@ -27,17 +27,18 @@ body._lock {
   column-gap: 50px;
   align-items: center;
 
-  @media (max-width: 1199px) {
+  @media (max-width: 991px) {
+    flex-direction: column;
+    padding: 26px 0;
+    justify-content: center;
+      margin: 0 20px;
+
   }
 
   @media (max-width: 1599px) {
   }
 }
 
-.header__block-logo {
-  @media (max-width: 1199px) {
-  }
-}
 
 .header__block-nav {
   width: 100%;
@@ -90,13 +91,14 @@ body._lock {
   width: 100%;
   display: grid;
   column-gap: 24px;
-  row-gap: 41px;
   align-items: center;
   grid-template-areas: "menu__nav log-in-out";
   justify-items: start;
   align-content: space-between;
 
-  @media (max-width: 1399px) {
+  @media (max-width: 991px) {
+      row-gap: 41px;
+
   }
 
   @media (max-width: 1699px) {
@@ -108,10 +110,10 @@ body._lock {
   width: 100%;
   grid-area: menu__nav;
   justify-content: flex-end;
-  @media (max-width: 1399px) {
-  }
+  
+  @media (max-width: 991px) {
+      justify-content: center;
 
-  @media (max-width: 1199px) {
   }
 }
 
@@ -128,7 +130,9 @@ body._lock {
   column-gap: 80px;
   justify-content: space-between;
 
-  @media (max-width: 1199px) {
+  @media (max-width: 991px) {
+    flex-direction: column;
+      row-gap: 80px;
   }
 }
 
@@ -148,6 +152,10 @@ body._lock {
   grid-area: log-in-out;
   align-items: center;
   justify-content: center;
+    @media (max-width:991px) {
+    flex-direction: column;
+      row-gap: 25px;
+  }
 }
 
 .menu__list-link-login {
@@ -227,16 +235,24 @@ body._lock {
   line-height: 22px;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 991px) {
+
+  .header__block-logo {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
   .menu__body {
     z-index: 2;
     display: grid;
     grid-gap: 14px;
     grid-template-areas:
-      "menu__list-link-login"
-      "menu__list-link-log-up"
-      "menu__nav";
-    grid-template-rows: 20px 20px 1fr 20px 1fr;
+      "menu__nav"
+      "log-in-out";
+  
+    grid-template-rows: 1fr 0.3fr ;
     grid-template-columns: 1fr;
     padding: 0 0 24px 0;
   }
@@ -261,7 +277,7 @@ body._lock {
     width: 18px;
     height: 12px;
     cursor: pointer;
-    top: -22px;
+  
   }
 
   .menu__icon span,
@@ -342,7 +358,7 @@ body._lock {
     top: 0;
     left: 0;
     width: 100%;
-    height: 54px;
+    height: 100px;
     background-color: var(--header-bg-color-mobile);
     z-index: 2;
   }
@@ -352,10 +368,9 @@ body._lock {
     text-align: center;
     font-family: Poppins;
     font-style: normal;
-    font-size: 14px;
     line-height: 18px;
     &:hover {
-      color: #cd1319;
+      color: #000000;
     }
   }
 }

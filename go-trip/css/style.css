@@ -1261,6 +1261,22 @@ body {
   .info {
     flex: 0 0 100%;
   }
+
+  .reviews-tourists {
+    flex-wrap: wrap;
+  }
+
+  .reviews-tourists__container {
+    padding: 20px 20px;
+  }
+
+  .reviews-tourists__photo {
+    flex: 0 0 100%;
+  }
+
+  .reviews-tourists__info {
+    flex: 0 0 100%;
+  }
 }
 @supports (-webkit-appearance:none){
 .main__bg{background-image:url(../img/index/main/main-bg.webp)}

@@ -447,7 +447,8 @@ body {
 }
 
 .main__bg {
-  width: 1440px;
+  max-width: 1440px;
+  width: 100%;
   background-image: url(../img/index/main/main-bg.png);
   background-repeat: no-repeat;
   height: 100vh;
@@ -1247,6 +1248,20 @@ body {
     color: #000000;
   }
 }
+
+@media (max-width: 767px) {
+  .slider__info {
+    flex: 0 0 100%;
+  }
+
+  .slider__container {
+    flex-wrap: wrap;
+  }
+
+  .info {
+    flex: 0 0 100%;
+  }
+}
 @supports (-webkit-appearance:none){
 .main__bg{background-image:url(../img/index/main/main-bg.webp)}
 }
@@ -1268,6 +1283,14 @@ body {
 }
 
  @media (max-width: 991px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 767px){
 
 @supports (-webkit-appearance:none){
 

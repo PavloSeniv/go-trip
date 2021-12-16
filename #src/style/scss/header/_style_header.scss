@@ -60,6 +60,11 @@ body._lock {
 
   @media (max-width: 1399px) {
   }
+
+  &:hover{
+    color: #000;
+  }
+
 }
 
 .header__logo._active {
@@ -124,7 +129,6 @@ body._lock {
   justify-content: space-between;
 
   @media (max-width: 1199px) {
-  
   }
 }
 
@@ -192,33 +196,26 @@ body._lock {
   justify-content: center;
   align-items: center;
   padding: 0 44px;
+  color: #fff;
+
+  &:hover {
+    background: linear-gradient(100.54deg, #ff7b4e 5.57%, #ff584e 70.03%), #fff;
+    cursor: pointer;
+    & .menu__sign-up {
+      color: #000;
+    }
+  }
+
   @media (max-width: 1399px) {
   }
 }
 
 .menu__sign-up {
   display: flex;
-  color: #fff;
-
   align-items: center;
   justify-content: center;
-  &:hover {
-    color: #000;
-  }
 
   @media (max-width: 1199px) {
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 18px;
-    text-align: center;
-    text-transform: uppercase;
-    color: #000000;
-
-    &:hover {
-      color: #333 !important;
-    }
   }
 }
 

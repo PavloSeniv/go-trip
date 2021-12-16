@@ -347,24 +347,33 @@ body._lock {
   line-height: 30px;
 }
 
+.footer__logo:hover {
+  color: #000;
+  cursor: pointer;
+}
+
 .footer__log-in-out {
   width: unset !important;
 }
 
-.footer__log-in-out .menu__list-link-sign-up a {
-  color: #fff;
-}
-
-.footer__log-in-out .menu__list-link-sign-up a:hover {
+.footer__log-in-out .menu__list-link-sign-up:hover a {
   color: #000;
 }
 
-.footer__log-in-out a {
-  color: #0f1f1c;
+.footer .menu__list-link-login a {
+  color: #000;
+}
+
+.footer .menu__list-link-login a:hover {
+  color: #ff7c4e;
 }
 
 .footer__block-nav a {
-  color: #0f1f1c;
+  color: #000;
+}
+
+.footer__block-nav a:hover {
+  color: #ff7c4e;
 }
 
 .footer__security-police {
@@ -618,9 +627,12 @@ body {
 }
 
 .main-scene__button:hover {
-  color: #000;
   background: linear-gradient(100.54deg, #ff7b4e 20.57%, #ff584e 86.03%);
   cursor: pointer;
+}
+
+.main-scene__button:hover a {
+  color: #000;
 }
 
 .main-scene__button a {
@@ -708,6 +720,15 @@ body {
   margin-top: 61px;
 }
 
+.info__button:hover {
+  background: linear-gradient(129.54deg, #bd431b 15.57%, #8d150f 95.03%);
+  cursor: pointer;
+}
+
+.info__button:hover a {
+  color: #000;
+}
+
 .info__button a {
   font-family: Poppins;
   font-style: normal;
@@ -763,6 +784,14 @@ body {
   display: flex;
   -moz-column-gap: 33px;
   column-gap: 33px;
+}
+
+.reviews-tourists__logo svg:hover {
+  cursor: alias;
+}
+
+.reviews-tourists__logo svg:hover g rect:nth-child(1) {
+  fill: #e0ad05;
 }
 
 .reviews-tourists__info-user {
@@ -909,6 +938,15 @@ body {
   margin-top: 57px;
 }
 
+.exploring__button:hover {
+  cursor: pointer;
+  background: linear-gradient(129.54deg, #d14618 15.57%, #ad160e 95.03%);
+}
+
+.exploring__button:hover a {
+  color: #000;
+}
+
 .exploring__link {
   font-family: Poppins;
   font-style: normal;
@@ -955,6 +993,7 @@ body {
 }
 
 .subscripe__input {
+  width: 58%;
   font-family: Poppins;
   font-style: normal;
   font-weight: 500;
@@ -996,6 +1035,7 @@ body {
 
 .subscripe__input:hover {
   cursor: pointer;
+  box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6);
 }
 
 .subscripe__button {
@@ -1011,6 +1051,11 @@ body {
   font-size: 25px;
   line-height: 37px;
   color: #ffffff;
+}
+
+.subscripe__button:hover {
+  background: linear-gradient(129.54deg, #d38064 15.57%, #ec261c 95.03%), #ffffff;
+  color: #000000;
 }
 
 /*-------- Subcripe End -------*/

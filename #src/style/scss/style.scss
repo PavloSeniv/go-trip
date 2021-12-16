@@ -254,9 +254,11 @@ body {
     margin-top: 68px;
     color: #fefefe;
     &:hover {
-      color: #000;
       background: linear-gradient(100.54deg, #ff7b4e 20.57%, #ff584e 86.03%);
       cursor: pointer;
+      & a {
+        color: #000;
+      }
     }
     & a {
       font-family: Poppins;
@@ -326,6 +328,7 @@ body {
     margin-top: 17px;
     letter-spacing: 0px;
   }
+
   &__button {
     display: flex;
     width: 223px;
@@ -335,6 +338,15 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 61px;
+    &:hover {
+      background: linear-gradient(129.54deg, #bd431b 15.57%, #8d150f 95.03%);
+      cursor: pointer;
+
+      & a {
+        color: #000;
+      }
+    }
+
     & a {
       font-family: Poppins;
       font-style: normal;
@@ -357,18 +369,23 @@ body {
   background-color: #e5e5e5;
   display: flex;
   column-gap: 68px;
+
   &__container {
     padding: 143px 100px;
   }
+
   &__photo {
     flex: 0 0 38.5%;
   }
+
   &__img {
     width: 100%;
   }
+
   &__info {
     flex: 0 0 61.5%;
   }
+
   &__title {
     font-family: Poppins;
     font-style: normal;
@@ -377,16 +394,30 @@ body {
     line-height: 67px;
     color: #0f1f1c;
   }
+
   &__user-info {
     margin-top: 38px;
     display: flex;
     column-gap: 33px;
   }
+
   &__logo {
+    & svg {
+      &:hover {
+        cursor: alias;
+        & g {
+          & rect:nth-child(1) {
+            fill: #e0ad05;
+          }
+        }
+      }
+    }
   }
+
   &__info-user {
     margin-top: 20px;
   }
+
   &__name {
     font-family: Poppins;
     font-style: normal;
@@ -395,6 +426,7 @@ body {
     line-height: 49px;
     color: #0f1f1c;
   }
+
   &__geo {
     font-family: Poppins;
     font-style: normal;
@@ -405,6 +437,7 @@ body {
     opacity: 0.5;
     margin-top: 10px;
   }
+
   &__subtitle {
     font-family: Poppins;
     font-style: normal;
@@ -416,6 +449,7 @@ body {
     letter-spacing: 1px;
     margin-top: 48px;
   }
+
   &__rating-area {
     margin-top: 20px;
   }
@@ -520,6 +554,13 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 57px;
+    &:hover {
+      cursor: pointer;
+      background: linear-gradient(129.54deg, #d14618 15.57%, #ad160e 95.03%);
+      & a {
+        color: #000;
+      }
+    }
   }
 
   &__link {
@@ -566,6 +607,7 @@ body {
   }
 
   &__input {
+    width: 58%;
     font-family: Poppins;
     font-style: normal;
     font-weight: 500;
@@ -586,6 +628,9 @@ body {
 
     &:hover {
       cursor: pointer;
+      -webkit-box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6);
+      -moz-box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6);
+      box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6);
     }
   }
 
@@ -602,6 +647,10 @@ body {
     font-size: 25px;
     line-height: 37px;
     color: #ffffff;
+    &:hover {
+      background: linear-gradient(129.54deg, #d38064 15.57%, #ec261c 95.03%), #ffffff;
+      color: #000000;
+    }
   }
 }
 /*-------- Subcripe End -------*/

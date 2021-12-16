@@ -1,3 +1,4 @@
+/*-------- Write Fonts Start -------*/
 @mixin font($font_name, $file_name, $weight, $style) {
   @font-face {
     font-family: $font_name;
@@ -7,21 +8,27 @@
     font-style: #{$style};
   }
 }
+/*-------- Write Fonts End -------*/
 
+/*-------- Import Start -------*/
 @import "_fonts";
 //@import "_libs";
 @import "_media";
 @import "_nullstyle";
 @import "_vars";
 @import "_mixin";
-
-// @import "../css/_style_header";
+@import "_vars";
+@import "header/_style_header";
+@import "footer/_style_footer";
+/*-------- Import End -------*/
 
 /*-------- Page Index Start -------*/
+
 /*-------- All Start -------*/
 body {
   background-color: #000000;
 }
+
 * {
   font-family: Poppins;
   font-style: normal;
@@ -72,7 +79,7 @@ body {
 
   &__bg {
     width: 1440px;
-    background-image: url(../img/index/main-bg.png);
+    background-image: url(../img/index/main/main-bg.png);
     background-repeat: no-repeat;
     height: 100vh;
     position: absolute;
@@ -104,13 +111,13 @@ body {
     bottom: 12%;
     left: 7.5%;
   }
-  
+
   &__big {
     position: relative;
     left: -1px;
   }
 
-   &__big-exploring {
+  &__big-exploring {
     position: relative;
     left: -1px;
   }
@@ -120,7 +127,7 @@ body {
     top: 8px;
     left: -1px;
   }
- 
+
   &__middle-exploring {
     position: relative;
     top: 12px;
@@ -149,7 +156,7 @@ body {
     left: 49.5%;
   }
 
-   &__two-scene {
+  &__two-scene {
     top: 24.5%;
     right: 11.8%;
   }
@@ -157,38 +164,35 @@ body {
   &__one {
     position: relative;
   }
-  
+
   &__two {
     position: relative;
     left: 80px;
-    top: -30px
+    top: -30px;
   }
 }
 
-.bg-triangle-left{
-    position: absolute;
-    z-index: 4;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 0;
-    border-bottom: 136px solid #e5e5e5;
-    border-right: 660px solid transparent;
+.bg-triangle-left {
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 136px solid #e5e5e5;
+  border-right: 660px solid transparent;
 }
 
-.bg-triangle-right{
-    position: absolute;
-    z-index: 4;
-    right: 0;
-    bottom: 0;
-    width: 0;
-    height: 0;
-    border-bottom: 136px solid #e5e5e5;
-    border-left: 660px solid transparent;
+.bg-triangle-right {
+  position: absolute;
+  z-index: 4;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 136px solid #e5e5e5;
+  border-left: 660px solid transparent;
 }
-
-@import "_vars";
-@import "header/_style_header";
 
 .main-scene {
   margin-top: 138px;
@@ -217,7 +221,7 @@ body {
   }
 
   &__title {
-    @include adaptiv-font(55,23);
+    @include adaptiv-font(55, 23);
     font-family: Poppins;
     font-style: normal;
     font-weight: 600;
@@ -268,10 +272,9 @@ body {
     user-select: none;
   }
   &__human {
-    left: 5%!important;
+    left: 5% !important;
   }
 }
-
 /*-------- Main End -------*/
 
 /*-------- Slider Start -------*/
@@ -347,7 +350,6 @@ body {
   margin-top: 110px;
   max-width: 1408px;
 }
-
 /*-------- Slider End -------*/
 
 /*-------- Tourists Start -------*/
@@ -422,50 +424,59 @@ body {
 .rating-area {
   overflow: hidden;
   width: 335px;
-}
-.rating-area:not(:checked) > input {
-  display: none;
-}
-.rating-area:not(:checked) > label {
-  float: right;
-  width: 67px;
-  padding: 0;
-  cursor: pointer;
-  font-size: 69px;
-  line-height: 69px;
-  color: #d3d3d3;
-  text-shadow: 1px 1px #bbb;
-}
-.rating-area:not(:checked) > label:before {
-  content: "★";
-}
-.rating-area > input:checked ~ label {
-  color: gold;
-  text-shadow: 1px 1px #c60;
-}
-.rating-area:not(:checked) > label:hover,
-.rating-area:not(:checked) > label:hover ~ label {
-  color: gold;
-}
-.rating-area > input:checked + label:hover,
-.rating-area > input:checked + label:hover ~ label,
-.rating-area > input:checked ~ label:hover,
-.rating-area > input:checked ~ label:hover ~ label,
-.rating-area > label:hover ~ input:checked ~ label {
-  color: gold;
-  text-shadow: 1px 1px goldenrod;
-}
-.rate-area > label:active {
-  position: relative;
+
+  &:not(:checked) > input {
+    display: none;
+  }
+
+  &:not(:checked) > label {
+    float: right;
+    width: 67px;
+    padding: 0;
+    cursor: pointer;
+    font-size: 69px;
+    line-height: 69px;
+    color: #d3d3d3;
+    text-shadow: 1px 1px #bbb;
+  }
+
+  &:not(:checked) > label:before {
+    content: "★";
+  }
+
+  & > input:checked ~ label {
+    color: gold;
+    text-shadow: 1px 1px #c60;
+  }
+
+  &:not(:checked) > label:hover,
+  &:not(:checked) > label:hover ~ label {
+    color: gold;
+  }
+
+  & > input:checked + label:hover,
+  & > input:checked + label:hover ~ label,
+  & > input:checked ~ label:hover,
+  & > input:checked ~ label:hover ~ label,
+  & > label:hover ~ input:checked ~ label {
+    color: gold;
+    text-shadow: 1px 1px goldenrod;
+  }
+
+  & .rate-area > label:active {
+    position: relative;
+  }
 }
 /*-------- Tourists End -------*/
 
 /*-------- Exploring Start -------*/
 .exploring {
   background-color: #e5e5e5;
+
   &__container {
     padding: 105px 100px;
   }
+
   &__block {
     display: flex;
     flex-direction: column;
@@ -476,6 +487,7 @@ body {
     justify-content: center;
     position: relative;
   }
+
   &__title {
     width: 519px;
     font-family: Poppins;
@@ -486,6 +498,7 @@ body {
     text-align: center;
     color: #0f1f1c;
   }
+
   &__subtitle {
     font-family: Poppins;
     font-style: normal;
@@ -496,6 +509,7 @@ body {
     opacity: 0.5;
     margin-top: 33px;
   }
+
   &__button {
     width: 225px;
     height: 79px;
@@ -507,6 +521,7 @@ body {
     align-items: center;
     margin-top: 57px;
   }
+
   &__link {
     font-family: Poppins;
     font-style: normal;
@@ -515,7 +530,6 @@ body {
     line-height: 30px;
   }
 }
-
 /*-------- Exploring End -------*/
 
 /*-------- Subcripe Start -------*/
@@ -525,9 +539,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   &__container {
     padding: 21px 106px 106px 106px;
   }
+
   &__title {
     width: 494px;
     font-family: Poppins;
@@ -538,6 +554,7 @@ body {
     text-align: center;
     color: #0f1f1c;
   }
+
   &__block {
     width: 800px;
     background: linear-gradient(0deg, #ffffff, #ffffff), #c4c4c4;
@@ -547,6 +564,7 @@ body {
     justify-content: space-between;
     margin-top: 60px;
   }
+
   &__input {
     font-family: Poppins;
     font-style: normal;
@@ -555,6 +573,7 @@ body {
     line-height: 36px;
     color: #000;
     opacity: 0.5;
+
     &::placeholder {
       font-family: Poppins;
       font-style: normal;
@@ -564,16 +583,17 @@ body {
       color: #0f1f1c;
       opacity: 0.5;
     }
+
     &:hover {
       cursor: pointer;
     }
   }
+
   &__button {
     width: 300px;
     height: 105px;
     left: 805px;
     top: 3416px;
-
     background: linear-gradient(129.54deg, #ff7b4e 15.57%, #ff584e 95.03%), #ffffff;
     border-radius: 35px;
     font-family: Poppins;
@@ -584,7 +604,4 @@ body {
     color: #ffffff;
   }
 }
-
 /*-------- Subcripe End -------*/
-
-@import "footer/_style_footer";

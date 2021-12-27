@@ -7,7 +7,7 @@
 /*-------- Import Start -------*/
 
 @font-face {
-  font-family: "Poppins-Bold";
+  font-family: Poppins;
   font-display: swap;
   src: url("../fonts/Poppins-Bold.woff") format("woff"), url("../fonts/Poppins-Bold.woff2") format("woff2");
   font-weight: 700;
@@ -15,7 +15,7 @@
 }
 
 @font-face {
-  font-family: "Poppins-Medium";
+  font-family: Poppins;
   font-display: swap;
   src: url("../fonts/Poppins-Medium.woff") format("woff"), url("../fonts/Poppins-Medium.woff2") format("woff2");
   font-weight: 500;
@@ -23,7 +23,7 @@
 }
 
 @font-face {
-  font-family: "Poppins-Regular";
+  font-family: Poppins;
   font-display: swap;
   src: url("../fonts/Poppins-Regular.woff") format("woff"), url("../fonts/Poppins-Regular.woff2") format("woff2");
   font-weight: 400;
@@ -31,7 +31,7 @@
 }
 
 @font-face {
-  font-family: "Poppins-SemiBold";
+  font-family: Poppins;
   font-display: swap;
   src: url("../fonts/Poppins-SemiBold.woff") format("woff"), url("../fonts/Poppins-SemiBold.woff2") format("woff2");
   font-weight: 600;
@@ -172,7 +172,7 @@ body._lock {
   min-height: 100px;
   flex-direction: row;
   -moz-column-gap: 50px;
-  column-gap: 50px;
+       column-gap: 50px;
   align-items: center;
 }
 
@@ -220,16 +220,19 @@ body._lock {
 
 .menu__body {
   width: 100%;
+  display: -ms-grid;
   display: grid;
   -moz-column-gap: 24px;
-  column-gap: 24px;
+       column-gap: 24px;
   align-items: center;
-  grid-template-areas: "menu__nav log-in-out";
+      grid-template-areas: "menu__nav log-in-out";
   justify-items: start;
   align-content: space-between;
 }
 
 .menu__nav {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
   display: flex;
   width: 100%;
   grid-area: menu__nav;
@@ -245,7 +248,7 @@ body._lock {
 .menu__list {
   display: flex;
   -moz-column-gap: 80px;
-  column-gap: 80px;
+       column-gap: 80px;
   justify-content: space-between;
 }
 
@@ -259,8 +262,10 @@ body._lock {
 }
 
 .log-in-out {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
   -moz-column-gap: 25px;
-  column-gap: 25px;
+       column-gap: 25px;
   width: 100%;
   display: flex;
   grid-area: log-in-out;
@@ -402,7 +407,6 @@ body {
 
 * {
   font-family: Poppins;
-  font-style: normal;
   font-weight: 400;
   font-size: 17px;
   color: #ffffff;
@@ -446,10 +450,12 @@ body {
   height: 100vh;
 }
 
+.no-webp .main__bg{
+  background-image: url(../img/index/main/main-bg.png); }
+
 .main__bg {
   max-width: 1440px;
   width: 100%;
-  background-image: url(../img/index/main/main-bg.png);
   background-repeat: no-repeat;
   height: 100vh;
   position: absolute;
@@ -646,9 +652,9 @@ body {
 .main-scene__photo {
   flex: 0 0 50%;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .main-scene__human {
@@ -751,7 +757,7 @@ body {
   background-color: #e5e5e5;
   display: flex;
   -moz-column-gap: 68px;
-  column-gap: 68px;
+       column-gap: 68px;
 }
 
 .reviews-tourists__container {
@@ -783,7 +789,7 @@ body {
   margin-top: 38px;
   display: flex;
   -moz-column-gap: 33px;
-  column-gap: 33px;
+       column-gap: 33px;
 }
 
 .reviews-tourists__logo svg:hover {
@@ -1125,10 +1131,13 @@ body {
 
   .menu__body {
     z-index: 2;
+    display: -ms-grid;
     display: grid;
     grid-gap: 14px;
-    grid-template-areas: "menu__nav" "log-in-out";
+        grid-template-areas: "menu__nav" "log-in-out";
+    -ms-grid-rows: 1fr 14px 0.3fr;
     grid-template-rows: 1fr 0.3fr;
+    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
     padding: 0 0 24px 0;
   }
@@ -1249,6 +1258,16 @@ body {
   .menu__link:hover {
     color: #000000;
   }
+
+  .menu__nav {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+
+  .log-in-out {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1288,38 +1307,5 @@ body {
     padding: 21px 20px;
   }
 }
-@supports (-webkit-appearance:none){
-.main__bg{background-image:url(../img/index/main/main-bg.webp)}
-}
 
- @media (max-width: 1399px){
-
-@supports (-webkit-appearance:none){
-
-}
-
-}
-
- @media (max-width: 1199px){
-
-@supports (-webkit-appearance:none){
-
-}
-
-}
-
- @media (max-width: 991px){
-
-@supports (-webkit-appearance:none){
-
-}
-
-}
-
- @media (max-width: 767px){
-
-@supports (-webkit-appearance:none){
-
-}
-
-}
+.webp .main__bg{ background-image: url(../img/index/main/main-bg.webp); }

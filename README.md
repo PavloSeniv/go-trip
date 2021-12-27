@@ -1,6 +1,6 @@
-# Project Name(Gulp__Build)
+# Project Name(gulp-build-2022)
 
-Project Name Description
+My gulp-build-2022
 
 ## Authors
 
@@ -8,7 +8,7 @@ Project Name Description
 
 ## Demo
 
-https://pavloseniv.github.io/go-trip/go-trip/index.html
+https://pavloseniv.github.io/gulp-build-2022/gulp-build-2022/index.html
 
 ## Screenshots
 
@@ -19,13 +19,13 @@ https://pavloseniv.github.io/go-trip/go-trip/index.html
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/PavloSeniv/gulp-build-2022.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd gulp-build-2022
 ```
 
 Install dependencies
@@ -34,10 +34,26 @@ Install dependencies
   npm install
 ```
 
-Start the gulp
+Start the gulp developer
 
 ```bash
-  gulp
+  npm run dev
 ```
 
-  
+Start the gulp build
+
+```bash
+  npm run build
+```
+
+Start the gulp zip
+
+```bash
+  npm run zip
+```
+
+Start the gulp ftp
+
+```bash
+  npm run ftp
+```

@@ -1,353 +1,72 @@
-let project_folder = require("path").basename(__dirname);
-let source_folder = "#src";
+// Основний модуль
+import gulp from "gulp"; //Ініціалізація gulp
+// Імпорт шляхів
+import { path } from "./gulp/config/path.js";
+// Імпорт спільних плагінів
+import { plugins } from "./gulp/config/plugins.js";
 
-let fs = require("fs"); //file system
-
-let path = {
-  // Папка dist(видається замовнику)
-  build: {
-    html: project_folder + "/",
-    css: project_folder + "/css/",
-    js: project_folder + "/js/",
-    img: project_folder + "/img/",
-    video: project_folder + "/video/",
-    fonts: project_folder + "/fonts/",
-    pluginsJs: project_folder + "/plugins/",
-    pluginsCss: project_folder + "/plugins/",
-    pluginsPhp: project_folder + "/plugins/",
-    pdf: project_folder + "/pdf/",
-  },
-  //Папка із початковими файлами
-  src: {
-    // Виключення всіх файлів html які починаються з _ із папки dist
-    html: [source_folder + "/*.html", "!" + source_folder + "/_*.html"],
-    css: source_folder + "/style/scss/style.scss",
-    js: [
-      source_folder + "/js/main_script.js",
-      source_folder + "/js/plugins*.js",
-    ],
-    //Якщо не  вказати розширення також іх верхнього регістру то можливий варіант не копіювання зображення
-    img: source_folder + "/img/**/*.+(png|PNG|jpg|JPG|gif|ico|svg|webp)",
-    video: source_folder + "/video/**/*.+(mp4|mp3)",
-    fonts: source_folder + "/fonts/*.ttf",
-    pluginsJs: source_folder + "/plugins/**/*.js",
-    pluginsCss: source_folder + "/plugins/**/*.css",
-    pluginsPhp: source_folder + "/plugins/**/*.php",
-    pdf: source_folder + "/pdf/**/*.pdf",
-  },
-  //Об'єкт  для слідкування за файлами в реальному часі(browserSync)
-  watch: {
-    html: source_folder + "/**/*.html",
-    html__page: source_folder + "html/**/*.html",
-    css: source_folder + "/style/**/*.{css,scss,less,sass}",
-    js: source_folder + "/js/**/*.js",
-    img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
-    video: source_folder + "/video/**/*.+(mp4|mp3)",
-    pluginsJs: source_folder + "/plugins/**/*.js",
-    pluginsCss: source_folder + "/plugins/**/*.css",
-    pluginsPhp: source_folder + "/plugins/**/*.php",
-    pdf: source_folder + "/pdf/**/*.pdf",
-  },
-  clean: "./" + project_folder + "/",
+// Передача значення в глобальну змінну
+global.app = {
+  isBuild: process.argv.includes("--build"),
+  isDev: !process.argv.includes("--build"),
+  path: path,
+  gulp: gulp,
+  plugins: plugins,
 };
 
-//Оголошуємо всі плагіни
-let { src, dest } = require("gulp"),
-  gulp = require("gulp"), //Ініціалізація gulp
-  browsersync = require("browser-sync").create(), // Для плагіна browser-sync
-  fileinclude = require("gulp-file-include"), // Для об'єднання декількох html файлів в єдиний index.html
-  del = require("del"),
-  scss = require("gulp-sass"),
-  autoprefixer = require("gulp-autoprefixer"),
-  group_media = require("gulp-group-css-media-queries"), // Для збирання всіх медіа запитів в кінець файлу
-  clean_css = require("gulp-clean-css"), // Очищення та зжимання css файлу
-  rename = require("gulp-rename"), // Для перейменування css файлу(переважно .min.css)
-  uglify = require("gulp-uglify-es").default, // Оптимізація js
-  imagemin = require("gulp-imagemin"), // Оптимізація зображень
-  webp = require("gulp-webp"), // Для перетворення зображень у формат webp
-  webphtml = require("gulp-webp-html"), // Інтеграція webp в html
-  webpcss2 = require("gulp-webp-css"), // Інтеграція webp в css(правильний варіант)
-  svgSprite = require("gulp-svg-sprite"), // Створення svg спрайтів
-  ttf2woff = require("gulp-ttf2woff"), // Конвертація шрифтів
-  ttf2woff2 = require("gulp-ttf2woff2"), // Конвертація шрифтів
-  fonter = require("gulp-fonter"), // Конвертація шрифтів з otf формату
-  concat = require("gulp-concat"); // Об'єдання файлів
-  //uncss = require("gulp-uncss"); // Видалення невикористаних правил css
+// Импорт задач
+import { copy } from "./gulp/tasks/copy.js";
+import { reset } from "./gulp/tasks/reset.js";
+import { html } from "./gulp/tasks/html.js";
+import { server } from "./gulp/tasks/server.js";
+import { scss } from "./gulp/tasks/scss.js";
+import { js } from "./gulp/tasks/js.js";
+import { images } from "./gulp/tasks/images.js";
+import { otfToTtf, otfToWoff, fontsStyle } from "./gulp/tasks/fonts.js";
+import { svgSprite } from "./gulp/tasks/svgSprite.js";
+import { zip } from "./gulp/tasks/zip.js";
+import { ftp } from "./gulp/tasks/ftp.js";
+import { pluginsJs, pluginsCss, pluginsPhp } from "./gulp/tasks/plugins.js";
 
-//Функція для плагіна browserSync
-function browserSync(params) {
-  browsersync.init({
-    server: {
-      baseDir: "./" + project_folder + "/",
-    },
-    port: 3000,
-    notify: true,
-  });
+// Слідкування за змінами в файлах у реальному часі
+function watcher(params) {
+  gulp.watch(path.watch.files, copy); //Для files
+  gulp.watch(path.watch.html, html); //Для html
+  // gulp.watch(path.watch.html, gulp.series(html,ftp)); //Для html  вивантаження по ftp
+  gulp.watch(path.watch.scss, scss); // Для css
+  gulp.watch(path.watch.js, js); // Для js
+  gulp.watch(path.watch.images, images); // Для img
+  gulp.watch(path.watch.pluginsJs, pluginsJs); // Для plugins .js file
+  gulp.watch(path.watch.pluginsCss, pluginsCss); // Для plugins .css file
+  gulp.watch(path.watch.pluginsPhp, pluginsPhp); // Для plugins .php file
+  // //gulp.watch([path.watch.libsCss], libsCss); // Для node_modules .css file
+  // //gulp.watch([path.watch.libsCss], libsJs); // Для node_modules .js file
 }
+// Послідовна обробка плагінів
+const pluginsFiles = gulp.series(pluginsJs, pluginsCss, pluginsPhp);
+// Послідовна обробка шрифтів
+const fonts = gulp.series(otfToTtf, otfToWoff, fontsStyle);
+// Основі завдання
+const mainTasks = gulp.series(
+  fonts,
+  pluginsFiles,
+  gulp.parallel(copy, html, scss, js, images)
+);
 
-//Копіювання index.html з src до dist(якщо папки немає, вона створится gulp)
-function html() {
-  return src(path.src.html)
-    .pipe(fileinclude())
-    .pipe(webphtml())
-    .pipe(dest(path.build.html))
-    .pipe(browsersync.stream());
-}
+// Процес виконання
+// Побудова сценаріїв виконування задач
+const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
+const build = gulp.series(reset, mainTasks);
+const deployZip = gulp.series(reset, mainTasks, zip);
+const deployFtp = gulp.series(reset, mainTasks, ftp);
 
-function css() {
-  return (
-    src(path.src.css)
-      //Не потрібно для scss
-      .pipe(fileinclude())
-      //Для scss файлів
-      .pipe(
-        scss({
-          outputStyle: "expanded", // Для формування файлу не стисненим
-        })
-      )
-      .pipe(
-        autoprefixer({
-          overrideBrowserlist: ["last 5 versions"],
-          cascade: true,
-        })
-      )
-      .pipe(group_media())
-      .pipe(webpcss2())
-      // .pipe(
-      //   uncss({
-      //     html: ["index.html", "/**/*.html"],
-      //   })
-      // )
-      .pipe(dest(path.build.css))
-      .pipe(clean_css())
-      .pipe(
-        rename({
-          extname: ".min.css",
-        })
-      )
-      .pipe(dest(path.build.css))
-      .pipe(browsersync.stream())
-  );
-}
+export { dev };
+export { build };
+export { deployZip };
+export { deployFtp };
 
-//Копіювання .js з src до dist(якщо папки немає, вона створится gulp)
-function js() {
-  return src(path.src.js)
-    .pipe(fileinclude())
-    .pipe(dest(path.build.js))
-    .pipe(uglify())
-    .pipe(
-      rename({
-        extname: ".min.js",
-      })
-    )
-    .pipe(dest(path.build.js))
-    .pipe(browsersync.stream());
-}
+// npm run svgSprite
+export { svgSprite };
 
-//Робота із зображеннями
-function images() {
-  return src(path.src.img)
-    .pipe(
-      webp({
-        quality: 70,
-      })
-    )
-    .pipe(dest(path.build.img))
-    .pipe(src(path.src.img))
-    .pipe(
-      imagemin({
-        progressive: true,
-        svgoPlugins: [{ remoteViewBox: false }],
-        interlaced: true,
-        optimizationLevel: 3, // 0 to 7
-      })
-    )
-    .pipe(dest(path.build.img))
-    .pipe(browsersync.stream());
-}
-
-function fonts(params) {
-  src(path.src.fonts).pipe(ttf2woff()).pipe(dest(path.build.fonts));
-  return src(path.src.fonts).pipe(ttf2woff2()).pipe(dest(path.build.fonts));
-}
-
-gulp.task("otf2ttf", function () {
-  return src([source_folder + "/fonts/*.otf"])
-    .pipe(
-      fonter({
-        formats: ["ttf"],
-      })
-    )
-    .pipe(dest(source_folder + "/fonts/"));
-});
-
-//Окреме завдання для створення svg спрайтів
-// gulp svgSprite in terminal
-gulp.task("svgSprite", function () {
-  return gulp
-    .src([source_folder + "/iconsprite/*.svg"])
-    .pipe(
-      svgSprite({
-        mode: {
-          stack: {
-            sprite: "../icons/icons.svg", //sprite file name
-            example: true,
-          },
-        },
-      })
-    )
-    .pipe(dest(path.build.img));
-});
-
-// Для автоматичного запису шрифтів в css
-function fontsStyle(params) {
-  let file_content = fs.readFileSync(source_folder + "/style/scss/_fonts.scss");
-  if (file_content == "") {
-    fs.writeFile(source_folder + "/style/scss/_fonts.scss", "", callBack);
-    return fs.readdir(path.build.fonts, function (err, items) {
-      if (items) {
-        let c_fontname;
-        for (var i = 0; i < items.length; i++) {
-          let fontname = items[i].split(".");
-          fontname = fontname[0];
-          if (c_fontname != fontname) {
-            fs.appendFile(
-              source_folder + "/style/scss/_fonts.scss",
-              '@include font("' +
-                fontname +
-                '", "' +
-                fontname +
-                '", "400", "normal");\r\n',
-              callBack
-            );
-          }
-          c_fontname = fontname;
-        }
-      }
-    });
-  }
-}
-
-function callBack() {}
-
-function video(params) {
-  return src(path.src.video)
-    .pipe(dest(path.build.video))
-    .pipe(browsersync.stream());
-}
-
-function pluginsJs(params) {
-  return src(path.src.pluginsJs)
-    .pipe(fileinclude())
-    .pipe(dest(path.build.pluginsJs))
-    .pipe(uglify())
-    .pipe(
-      rename({
-        extname: ".min.js",
-      })
-    )
-    .pipe(dest(path.build.pluginsJs))
-    .pipe(browsersync.stream());
-}
-
-function pluginsCss(params) {
-  return src(path.src.pluginsCss)
-    .pipe(dest(path.build.pluginsCss))
-    .pipe(clean_css())
-    .pipe(
-      rename({
-        extname: ".min.css",
-      })
-    )
-    .pipe(dest(path.build.pluginsCss))
-    .pipe(browsersync.stream());
-}
-
-function pluginsPhp(params) {
-  return src(path.src.pluginsPhp)
-    .pipe(dest(path.build.pluginsPhp))
-    .pipe(browsersync.stream());
-}
-
-function pdf(params) {
-  return src(path.src.pdf).pipe(dest(path.build.pdf));
-}
-
-function libsCss(params) {
-  return gulp
-    .src([
-      "node_modules/normalize.css/normalize.css",
-      "node_modules/aos/dist/aos.css",
-    ])
-    .pipe(concat("_libs.scss"))
-    .pipe(gulp.dest("#src/style/scss"))
-    .pipe(browsersync.stream());
-}
-
-function libsJs(params) {
-  return gulp
-    .src(["node_modules/aos/dist/aos.js"])
-    .pipe(concat("libs.js"))
-    .pipe(uglify())
-    .pipe(gulp.dest("#src/plugins/libs"))
-    .pipe(browsersync.stream());
-}
-
-//Слідкування за файлами в реальному часі
-function watchFiles(params) {
-  gulp.watch([path.watch.html], html); //Для html
-  gulp.watch([path.watch.css], css); // Для css
-  gulp.watch([path.watch.js], js); // Для js
-  gulp.watch([path.watch.img], images); // Для img
-  gulp.watch([path.watch.video], video); // Для video
-  gulp.watch([path.watch.pluginsJs], pluginsJs); // Для plugins .js file
-  gulp.watch([path.watch.pluginsCss], pluginsCss); // Для plugins .css file
-  gulp.watch([path.watch.pluginsPhp], pluginsPhp); // Для plugins .php file
-  gulp.watch([path.watch.pdf], pdf); // Для plugins .css file
-  //gulp.watch([path.watch.pdf], libsCss); // Для node_modules .css file
-  //gulp.watch([path.watch.pdf], libsJs); // Для node_modules .js file
-}
-
-function clean(params) {
-  return del(path.clean); //Видалення попередньої папки з результатом
-}
-
-//Процес виконання
-let build = gulp.series(
-  clean,
-  gulp.parallel(
-    js,
-    css,
-    html,
-    images,
-    video,
-    fonts,
-    pluginsJs,
-    pluginsCss,
-    pluginsPhp,
-    pdf
-    //libsCss,
-    //libsJs
-  ),
-  fontsStyle
-); //тут присутній варіант паралельного запису шрифтів та відео
-
-let watch = gulp.parallel(build, watchFiles, browserSync);
-
-//exports.libsJs = libsJs;
-//exports.libsCss = libsCss;
-exports.pdf = pdf;
-exports.pluginsPhp = pluginsPhp;
-exports.pluginsCss = pluginsCss;
-exports.pluginsJs = pluginsJs;
-exports.video = video;
-exports.fontsStyle = fontsStyle;
-exports.fonts = fonts;
-exports.images = images;
-exports.js = js;
-exports.css = css;
-exports.html = html;
-exports.build = build;
-exports.watch = watch;
-exports.default = watch;
+// Виконування сценарію за замовчуванням
+gulp.task("default", dev);

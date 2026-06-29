@@ -87,19 +87,13 @@
   }
   &__title {
     font-weight: 600;
-    font-size: 45px;
+    font-size: clamp(28px, 5vw, 45px);
     line-height: 1.2;
     color: $ink;
     letter-spacing: 0.5px;
 
     span {
       color: $green-600;
-    }
-    @media (max-width: 767px) {
-      font-size: 34px;
-    }
-    @media (max-width: 480px) {
-      font-size: 28px;
     }
   }
   &__text {
@@ -369,7 +363,7 @@ textarea.is-invalid {
 
   &__title {
     font-weight: 600;
-    font-size: 34px;
+    font-size: clamp(26px, 4.5vw, 34px);
     color: $ink;
     text-align: center;
   }

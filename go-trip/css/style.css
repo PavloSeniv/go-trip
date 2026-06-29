@@ -405,7 +405,7 @@ img {
 
 .section-head__title {
   font-weight: 600;
-  font-size: 45px;
+  font-size: clamp(28px, 5vw, 45px);
   line-height: 1.2;
   color: #0f1f1c;
   letter-spacing: 0.5px;
@@ -692,7 +692,7 @@ textarea.is-invalid {
 
 .auth__title {
   font-weight: 600;
-  font-size: 34px;
+  font-size: clamp(26px, 4.5vw, 34px);
   color: #0f1f1c;
   text-align: center;
 }
@@ -791,6 +791,11 @@ textarea.is-invalid {
 
 body._lock {
   overflow: hidden;
+}
+
+body._lock .header {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .header {
@@ -1176,7 +1181,7 @@ body._lock {
   position: relative;
   z-index: 2;
   font-weight: 600;
-  font-size: 60px;
+  font-size: clamp(32px, 6vw, 60px);
   line-height: 1.1;
   color: #fff;
   letter-spacing: 1px;
@@ -1252,7 +1257,7 @@ body._lock {
 
 .stats__num {
   font-weight: 600;
-  font-size: 46px;
+  font-size: clamp(32px, 5vw, 46px);
   color: #fff;
 }
 
@@ -1330,7 +1335,7 @@ body._lock {
 .plan__price {
   margin-top: 14px;
   font-weight: 700;
-  font-size: 52px;
+  font-size: clamp(36px, 5vw, 52px);
   color: #0f1f1c;
 }
 
@@ -1835,8 +1840,8 @@ body._lock {
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
-  font-size: 55px;
-  line-height: 82px;
+  font-size: clamp(30px, 6vw, 55px);
+  line-height: 1.15;
   color: #0f1f1c;
   letter-spacing: 1px;
 }
@@ -1862,7 +1867,7 @@ body._lock {
   border-radius: 24px;
   align-items: center;
   justify-content: center;
-  margin-top: 61px;
+  margin-top: clamp(28px, 5vw, 61px);
   transition: transform 0.32s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.32s cubic-bezier(0.22, 0.61, 0.36, 1), background 0.32s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
@@ -1883,7 +1888,7 @@ body._lock {
 }
 
 .__container-swiper {
-  margin-top: 110px;
+  margin-top: clamp(30px, 8vw, 110px);
   width: 100%;
 }
 
@@ -1922,8 +1927,8 @@ body._lock {
   font-family: Poppins;
   font-style: normal;
   font-weight: 500;
-  font-size: 45px;
-  line-height: 67px;
+  font-size: clamp(26px, 5vw, 45px);
+  line-height: 1.25;
   color: #0f1f1c;
 }
 
@@ -2096,7 +2101,7 @@ body._lock {
 
 .swiper-nav {
   position: absolute;
-  top: 110px;
+  top: clamp(30px, 8vw, 110px);
   left: 0;
   right: 0;
   bottom: 0;
@@ -2155,8 +2160,8 @@ body._lock {
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  border-radius: 60px;
-  padding: 102px 102px 130px 102px;
+  border-radius: clamp(24px, 5vw, 60px);
+  padding: clamp(40px, 8vw, 102px) clamp(20px, 7vw, 102px) clamp(48px, 9vw, 130px);
   align-items: center;
   justify-content: center;
   position: relative;
@@ -2168,8 +2173,8 @@ body._lock {
   font-family: Poppins;
   font-style: normal;
   font-weight: 500;
-  font-size: 45px;
-  line-height: 67px;
+  font-size: clamp(26px, 5vw, 45px);
+  line-height: 1.25;
   text-align: center;
   color: #0f1f1c;
 }
@@ -2178,8 +2183,8 @@ body._lock {
   font-family: Poppins;
   font-style: normal;
   font-weight: 400;
-  font-size: 30px;
-  line-height: 45px;
+  font-size: clamp(16px, 2.4vw, 30px);
+  line-height: 1.5;
   color: #0f1f1c;
   opacity: 0.5;
   margin-top: 33px;
@@ -2238,8 +2243,8 @@ body._lock {
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
-  font-size: 55px;
-  line-height: 1.3;
+  font-size: clamp(28px, 6vw, 55px);
+  line-height: 1.2;
   text-align: center;
   color: #0f1f1c;
 }
@@ -2543,14 +2548,6 @@ body._lock {
 }
 
 @media (max-width: 767px) {
-  .section-head__title {
-    font-size: 34px;
-  }
-
-  .page-banner__title {
-    font-size: 40px;
-  }
-
   .section {
     padding: 70px 0;
   }
@@ -2622,11 +2619,6 @@ body._lock {
     line-height: 1.3;
   }
 
-  .info__title-span {
-    font-size: 40px;
-    line-height: 1.2;
-  }
-
   .reviews-tourists {
     flex-direction: column;
     -moz-column-gap: 0;
@@ -2646,11 +2638,6 @@ body._lock {
   .reviews-tourists__info {
     flex: 0 0 auto;
     width: 100%;
-  }
-
-  .reviews-tourists__title {
-    font-size: 30px;
-    line-height: 1.3;
   }
 
   .reviews-tourists__user-info {
@@ -2685,7 +2672,6 @@ body._lock {
   }
 
   .swiper-nav {
-    top: 130px;
     padding: 0 8px;
   }
 
@@ -2695,10 +2681,6 @@ body._lock {
 
   .subscripe__container {
     padding: 21px 20px 70px;
-  }
-
-  .subscripe__title {
-    font-size: 34px;
   }
 }
 
@@ -2797,16 +2779,6 @@ body._lock {
   .subscripe .form__error {
     padding-left: 0;
     text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .section-head__title {
-    font-size: 28px;
-  }
-
-  .page-banner__title {
-    font-size: 32px;
   }
 }
 

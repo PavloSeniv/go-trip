@@ -351,15 +351,10 @@
     font-family: Poppins;
     font-style: normal;
     font-weight: 600;
-    font-size: 55px;
-    line-height: 82px;
+    font-size: clamp(30px, 6vw, 55px); // fluid: full size on desktop, smaller on phones
+    line-height: 1.15;
     color: #0f1f1c;
     letter-spacing: 1px;
-
-    @media (max-width: 767px) {
-      font-size: 40px;
-      line-height: 1.2;
-    }
   }
 
   &__sup-title {
@@ -383,7 +378,7 @@
     border-radius: $radius;
     align-items: center;
     justify-content: center;
-    margin-top: 61px;
+    margin-top: clamp(28px, 5vw, 61px);
     transition: transform $dur $ease, box-shadow $dur $ease, background $dur $ease;
     &:hover {
       background: $grad-coral-hover;
@@ -404,7 +399,7 @@
 }
 
 .__container-swiper {
-  margin-top: 110px;
+  margin-top: clamp(30px, 8vw, 110px); // fluid gap (kept in sync with .swiper-nav top)
   width: 100%; // fill the visible column instead of bleeding off-screen
 }
 /*-------- Slider End -------*/
@@ -455,14 +450,9 @@
     font-family: Poppins;
     font-style: normal;
     font-weight: 500;
-    font-size: 45px;
-    line-height: 67px;
+    font-size: clamp(26px, 5vw, 45px);
+    line-height: 1.25;
     color: #0f1f1c;
-
-    @media (max-width: 767px) {
-      font-size: 30px;
-      line-height: 1.3;
-    }
   }
 
   &__user-info {
@@ -669,7 +659,7 @@
 // and stay on-screen even though the slides themselves bleed off to the right.
 .swiper-nav {
   position: absolute;
-  top: 110px;
+  top: clamp(30px, 8vw, 110px); // matches .__container-swiper margin-top so arrows stay centred on the slides
   left: 0;
   right: 0;
   bottom: 0;
@@ -681,7 +671,6 @@
   pointer-events: none; // only the buttons should capture clicks
 
   @media (max-width: 767px) {
-    top: 130px;
     padding: 0 8px;
   }
   @media (max-width: 575px) {
@@ -741,8 +730,9 @@
     display: flex;
     flex-direction: column;
     background-color: #fff;
-    border-radius: 60px;
-    padding: 102px 102px 130px 102px;
+    border-radius: clamp(24px, 5vw, 60px);
+    // fluid padding: big airy box on desktop, comfortable (not crushed) on phones
+    padding: clamp(40px, 8vw, 102px) clamp(20px, 7vw, 102px) clamp(48px, 9vw, 130px);
     align-items: center;
     justify-content: center;
     position: relative;
@@ -754,8 +744,8 @@
     font-family: Poppins;
     font-style: normal;
     font-weight: 500;
-    font-size: 45px;
-    line-height: 67px;
+    font-size: clamp(26px, 5vw, 45px);
+    line-height: 1.25;
     text-align: center;
     color: #0f1f1c;
   }
@@ -764,8 +754,8 @@
     font-family: Poppins;
     font-style: normal;
     font-weight: 400;
-    font-size: 30px;
-    line-height: 45px;
+    font-size: clamp(16px, 2.4vw, 30px);
+    line-height: 1.5;
     color: #0f1f1c;
     opacity: 0.5;
     margin-top: 33px;
@@ -824,14 +814,10 @@
     font-family: Poppins;
     font-style: normal;
     font-weight: 600;
-    font-size: 55px;
-    line-height: 1.3;
+    font-size: clamp(28px, 6vw, 55px);
+    line-height: 1.2;
     text-align: center;
     color: #0f1f1c;
-
-    @media (max-width: 767px) {
-      font-size: 34px;
-    }
   }
 
   &__block {

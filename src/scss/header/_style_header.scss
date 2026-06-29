@@ -2,6 +2,15 @@ body._lock {
   overflow: hidden;
 }
 
+// When the mobile menu is open, the header must NOT have backdrop-filter:
+// a filter/backdrop-filter turns the header into the containing block for its
+// position:fixed children, which would trap the full-screen .menu__body overlay
+// inside the slim header box (so it stops covering the viewport after scrolling).
+body._lock .header {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
 .header {
   margin: 0 auto;
   position: fixed;

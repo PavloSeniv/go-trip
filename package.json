@@ -1,7 +1,7 @@
 {
-  "name": "gulp-build-2022",
+  "name": "go-trip",
   "version": "1.0.0",
-  "description": "My gulp-build-2022",
+  "description": "GoTrip — a multi-page travel agency landing page built with Gulp + SCSS.",
   "main": "gulpfile.js",
   "type": "module",
   "directories": {
@@ -16,17 +16,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PavloSeniv/gulp-build-2022.git"
+    "url": "git+https://github.com/PavloSeniv/go-trip.git"
   },
   "keywords": [
-    "Gulp"
+    "gulp",
+    "scss",
+    "landing-page",
+    "travel",
+    "responsive",
+    "swiper",
+    "aos"
   ],
-  "author": "Seniv Pavlo",
+  "author": "Pavlo Seniv <senivpavlo16it@gmail.com> (https://github.com/PavloSeniv)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/PavloSeniv/gulp-build-2022/issues"
+    "url": "https://github.com/PavloSeniv/go-trip/issues"
   },
-  "homepage": "https://github.com/PavloSeniv/gulp-build-2022#readme",
+  "homepage": "https://github.com/PavloSeniv/go-trip#readme",
   "devDependencies": {
     "browser-sync": "^2.27.7",
     "del": "^6.0.0",

@@ -1,6 +1,17 @@
 import fs from "fs";
 import fonter from "gulp-fonter"; // Конвертація шрифтів з otf формату
 import ttf2woff2 from "gulp-ttf2woff2"; // Конвертація шрифтів
+import rename from "gulp-rename"; // Нормалізація імен файлів
+
+// На macOS/Linux gulp-fonter інколи віддає шлях з Windows-роздільником "\",
+// через що в build потрапляють файли на кшталт `fonts\Poppins-Bold.woff`.
+// Прибираємо будь-який каталог та зворотний слеш з імені файлу.
+const flattenName = () =>
+  rename((p) => {
+    const i = p.basename.lastIndexOf("\\");
+    if (i >= 0) p.basename = p.basename.slice(i + 1);
+    p.dirname = "";
+  });
 
 export const otfToTtf = (params) => {
   // Шукаємо файли шрифтів .otf
@@ -39,18 +50,21 @@ export const otfToWoff = (params) => {
           })
         )
       )
-      // Конвертуємо в .ttf
+      // Конвертуємо в .woff
       .pipe(
         fonter({
           formats: ["woff"],
         })
       )
+      // Нормалізуємо ім'я (прибираємо можливий "\" від gulp-fonter)
+      .pipe(flattenName())
       // Вивантажуємо у папку з результатом
       .pipe(app.gulp.dest(`${app.path.build.fonts}`))
       // Шукаємо файли шрифтів .ttf
       .pipe(app.gulp.src(`${app.path.srcFolder}/fonts/*.ttf`))
       // Конвертуємо в .woff2
       .pipe(ttf2woff2())
+      .pipe(flattenName())
       // Вивантажуємо у папку з результатом
       .pipe(app.gulp.dest(`${app.path.build.fonts}`))
   );

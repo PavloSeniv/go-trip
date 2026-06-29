@@ -13,13 +13,9 @@
   box-sizing: border-box;
 }
 
-:focus,
+// Hide the outline only for mouse/touch focus; keep it for keyboard users
+:focus:not(:focus-visible),
 :active {
-  outline: none;
-}
-
-a:focus,
-a:active {
   outline: none;
 }
 

@@ -5,6 +5,8 @@ import Swiper from "swiper/bundle";
 // import "swiper/css/bundle";
 
 export function swiperHome(params) {
+  // Слайдер є лише на головній — на інших сторінках виходимо
+  if (!document.querySelector(".swiper-container")) return;
   // init Swiper:
   const SliderHome = new Swiper(".swiper-container", {
     //  Стрілки навігації
@@ -147,7 +149,7 @@ export function swiperHome(params) {
     },
 
     // Скорость
-    speed: 2000,
+    speed: 600,
 
     // Вертикальний слайдер
     direction: "horizontal",

@@ -4,6 +4,12 @@ functionsIsWebp.isWebp();
 import * as functionsHeaderMenuBurger from "./modules/_header_menu_burger.js";
 functionsHeaderMenuBurger.headerMenuBurger();
 
+import * as functionsNavUi from "./modules/_nav_ui.js";
+functionsNavUi.navUi();
+
+import * as functionsForms from "./modules/_forms.js";
+functionsForms.forms();
+
 import * as functionsParallaxInit from "./modules/_parallax_init.js";
 functionsParallaxInit.parallaxInit();
 

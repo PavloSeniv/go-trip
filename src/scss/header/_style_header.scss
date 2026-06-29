@@ -3,39 +3,41 @@ body._lock {
 }
 
 .header {
-  max-width: 1440px;
-  position: absolute;
+  margin: 0 auto;
+  position: fixed;
+  left: 0;
+  right: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 50; // stay above page content (e.g. slider arrows) while scrolling
   background-color: var(--header-bg-color);
   font-family: Poppins;
-  border-bottom: 1px solid var(--header-bg-color);
+  // Only the background/shadow change on scroll — the height stays constant so
+  // the header never "jumps" smaller when the user starts scrolling.
+  transition: background-color 0.35s ease, box-shadow 0.35s ease;
 
-  @media (max-width: 1199px) {
-    position: fixed;
+  // Solid bar once the page is scrolled (added via JS) — same height as default
+  &--scrolled {
+    background-color: rgba(12, 36, 23, 0.92);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 30px -18px rgba(0, 0, 0, 0.6);
   }
 }
 
 .header__container {
   max-width: var(--header-width-container);
   margin: 0 100px;
-  padding: 44px 0;
+  padding: 16px 0; // slim, fixed height (no shrink-on-scroll jump)
   display: flex;
   justify-content: space-between;
-  min-height: 100px;
   flex-direction: row;
   column-gap: 50px;
   align-items: center;
 
   @media (max-width: 991px) {
     flex-direction: column;
-    padding: 26px 0;
+    padding: 14px 0;
     justify-content: center;
-      margin: 0 20px;
-
-  }
-
-  @media (max-width: 1599px) {
+    margin: 0 20px;
   }
 }
 
@@ -47,25 +49,29 @@ body._lock {
 .header__logo {
   position: relative;
   z-index: 5;
-  display: flex;
+  display: inline-flex;
   flex: 0 0 auto;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+  white-space: nowrap;
 
   font-family: Poppins;
   font-style: normal;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 30px;
+  color: #fff;
+  letter-spacing: 0.5px;
 
-  @media (max-width: 1399px) {
+  span {
+    color: $coral-1;
   }
 
-  &:hover{
-    color: #000;
+  &:hover {
+    color: #fff;
+    opacity: 0.85;
   }
-
 }
 
 .header__logo._active {
@@ -85,6 +91,10 @@ body._lock {
 
 .menu__icon {
   display: none;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .menu__body {
@@ -95,14 +105,6 @@ body._lock {
   grid-template-areas: "menu__nav log-in-out";
   justify-items: start;
   align-content: space-between;
-
-  @media (max-width: 991px) {
-      row-gap: 41px;
-
-  }
-
-  @media (max-width: 1699px) {
-  }
 }
 
 .menu__nav {
@@ -121,7 +123,9 @@ body._lock {
   position: relative;
   height: 20px;
   text-align: center;
-  @media (max-width: 1199px) {
+
+  @media (max-width: 991px) {
+    height: auto;
   }
 }
 
@@ -132,17 +136,15 @@ body._lock {
 
   @media (max-width: 991px) {
     flex-direction: column;
-      row-gap: 80px;
+    align-items: center;
+    row-gap: 28px;
   }
 }
 
-.menu__list-link:hover::after {
-  content: "";
-  display: block;
-  background-color: #c4c4c4;
-  width: 35px;
-  height: 4px;
-  border-radius: 100px;
+.menu__list-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .log-in-out {
@@ -176,45 +178,40 @@ body._lock {
   color: #fff;
 
   &:hover {
-    color: #000;
+    color: $coral-1;
   }
 
-  @media (max-width: 1199px) {
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 18px;
-    text-align: center;
-    text-transform: uppercase;
-    color: #000000;
+  @media (max-width: 991px) {
+    font-size: 28px;
+    color: #fff;
 
     &:hover {
-      color: #333 !important;
+      color: $coral-1;
     }
   }
 }
 
 .menu__list-link-sign-up {
-  width: 128px;
+  min-width: 128px;
   height: 49px;
   display: flex;
-  background: linear-gradient(129.54deg, #ff7b4e 15.57%, #ff584e 95.03%), #fff;
+  background: $grad-coral;
+  box-shadow: $shadow-coral;
   border-radius: 100px;
   justify-content: center;
   align-items: center;
   padding: 0 44px;
   color: #fff;
+  transition: transform $dur $ease, box-shadow $dur $ease, background $dur $ease;
 
   &:hover {
-    background: linear-gradient(100.54deg, #ff7b4e 5.57%, #ff584e 70.03%), #fff;
+    background: $grad-coral-hover;
     cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: $shadow-coral-hover;
     & .menu__sign-up {
-      color: #000;
+      color: #fff;
     }
-  }
-
-  @media (max-width: 1399px) {
   }
 }
 
@@ -228,11 +225,34 @@ body._lock {
 }
 
 .menu__link {
+  position: relative;
   font-family: Poppins;
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
   line-height: 22px;
+  color: var(--header-menu-link-color);
+  transition: color $dur $ease, opacity $dur $ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -9px;
+    height: 3px;
+    width: 0;
+    border-radius: 100px;
+    background: $grad-coral;
+    transition: width $dur $ease;
+  }
+
+  &:hover::after,
+  &.menu__link--active::after {
+    width: 100%;
+  }
+  &:hover {
+    opacity: 0.92;
+  }
 }
 
 @media (max-width: 991px) {
@@ -246,15 +266,11 @@ body._lock {
 
   .menu__body {
     z-index: 2;
-    display: grid;
-    grid-gap: 14px;
-    grid-template-areas:
-      "menu__nav"
-      "log-in-out";
-  
-    grid-template-rows: 1fr 0.3fr ;
-    grid-template-columns: 1fr;
-    padding: 0 0 24px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 44px;
   }
 
   .menu__list-input {
@@ -265,8 +281,8 @@ body._lock {
     z-index: 5;
     display: block;
     position: relative;
-    width: 18px;
-    height: 12px;
+    width: 28px;
+    height: 20px;
     cursor: pointer;
   }
 
@@ -274,10 +290,9 @@ body._lock {
     z-index: 5;
     display: block;
     position: relative;
-    width: 18px;
-    height: 12px;
+    width: 28px;
+    height: 20px;
     cursor: pointer;
-  
   }
 
   .menu__icon span,
@@ -294,7 +309,7 @@ body._lock {
     right: 0;
     position: absolute;
     height: 15%;
-    width: 50%;
+    width: 100%;
     transition: all 0.3s ease 0s;
     background-color: var(--header-bg-menu-icon-mobile);
   }
@@ -339,28 +354,14 @@ body._lock {
     width: 100%;
     height: 100%;
     background-color: var(--header-bg-menu-body-mobile);
-    padding: 70px 15px 0 15px;
-    transition: all 0.3s ease 0s;
-    overflow: auto;
+    padding: 96px 24px 40px;
+    transition: left 0.35s ease 0s;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .menu__body._active {
     left: 0;
-  }
-
-  .menu__body._active::before {
-    border-bottom: 1px solid #e0e0e0;
-  }
-
-  .menu__body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background-color: var(--header-bg-color-mobile);
-    z-index: 2;
   }
 
   .menu__link {
@@ -370,7 +371,7 @@ body._lock {
     font-style: normal;
     line-height: 18px;
     &:hover {
-      color: #000000;
+      color: $coral-1;
     }
   }
 }

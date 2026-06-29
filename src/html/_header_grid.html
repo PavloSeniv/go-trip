@@ -2,49 +2,49 @@
   <div class="header__container">
     <div class="header__block-logo">
 
-      <a data-aos="zoom-in" tabindex="2" class="header__logo" href="index.html">
-        GoTrip
+      <a data-aos="zoom-in" class="header__logo" href="index.html">
+        Go<span>Trip</span>
       </a>
 
-      <a tabindex="" class="header__logo-mobile-title" href=" index.html">Menu</a>
+      <a class="header__logo-mobile-title" href="index.html">Menu</a>
 
       <div class="header__menu menu">
-        <div class="menu__icon">
+        <button type="button" class="menu__icon" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
           <span></span>
-        </div>
+        </button>
       </div>
     </div>
 
     <div class="header__block-nav">
-      <div class="menu__body">
+      <div class="menu__body" id="primary-nav">
 
-        <nav class="menu__nav">
+        <nav class="menu__nav" aria-label="Main navigation">
           <ul class="menu__list">
-            <li tabindex="1" class="menu__list-link menu__list-link-1">
-              <a class="menu__link" href="#">Home</a>
+            <li class="menu__list-link menu__list-link-1">
+              <a class="menu__link" href="index.html">Home</a>
             </li>
 
-            <li tabindex="2" class="menu__list-link menu__list-link-2">
-              <a class="menu__link" href="#">Services</a>
+            <li class="menu__list-link menu__list-link-2">
+              <a class="menu__link" href="services.html">Services</a>
             </li>
 
-            <li tabindex="3" class="menu__list-link menu__list-link-3">
-              <a class="menu__link" href="#"> Pricing</a>
+            <li class="menu__list-link menu__list-link-3">
+              <a class="menu__link" href="pricing.html">Pricing</a>
             </li>
 
-            <li tabindex="4" class="menu__list-link menu__list-link-4">
-              <a class="menu__link" href="#">Contack</a>
+            <li class="menu__list-link menu__list-link-4">
+              <a class="menu__link" href="contact.html">Contact</a>
             </li>
           </ul>
         </nav>
 
         <div class="log-in-out">
-          <div tabindex="9" class="menu__list-link-login">
-            <a class="menu__link menu__login" href="#">Sign up</a>
+          <div class="menu__list-link-login">
+            <a class="menu__link menu__login" href="register.html">Sign up</a>
           </div>
 
-          <div tabindex="10" class="menu__list-link-sign-up">
-            <a class="menu__link menu__sign-up" href="#">Login</a>
+          <div class="menu__list-link-sign-up">
+            <a class="menu__link menu__sign-up" href="login.html">Login</a>
           </div>
         </div>
 

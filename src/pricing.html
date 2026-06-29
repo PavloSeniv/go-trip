@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+@@include('html/head.html',{
+  "title": "Pricing — GoTrip"
+})
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="__container">
+
+    @@include('html/_header_grid.html')
+
+    <main id="main">
+
+      <section class="page-banner">
+        <div class="decor decor--dots decor-1"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <svg aria-hidden="true" focusable="false" class="decor decor--wave decor-2" viewBox="0 0 90 39" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.6" d="M7 32 21.8 17.4c5.8-5.8 15.2-5.8 21 0l4.3 4.2c5.8 5.8 15.2 5.8 21 0L83 7" stroke="currentColor" stroke-width="13" stroke-linecap="round"/></svg>
+        <div class="decor decor--dots decor-3"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+        <h1 class="page-banner__title">Simple Pricing</h1>
+        <p class="page-banner__crumbs"><a href="index.html">Home</a> / <span>Pricing</span></p>
+      </section>
+
+      <section class="section">
+        <div class="shell">
+          <div class="section-head section-head--center" data-aos="fade-up">
+            <span class="section-head__eyebrow">Plans</span>
+            <h2 class="section-head__title">Choose the trip that <span>fits you</span></h2>
+            <p class="section-head__text">No hidden fees. Cancel anytime. Every plan includes a certified guide and full travel insurance.</p>
+          </div>
+
+          <div class="plans">
+
+            <article class="plan" data-aos="fade-up">
+              <h3 class="plan__name">Explorer</h3>
+              <div class="plan__price">$149<span>/trip</span></div>
+              <p class="plan__period">Great for a first taste of the wild</p>
+              <ul class="plan__features">
+                <li>1-day guided tour</li>
+                <li>Group of up to 12</li>
+                <li>Basic gear included</li>
+                <li>Travel insurance</li>
+                <li>Email support</li>
+              </ul>
+              <a class="btn btn--outline btn--block" href="register.html">Get started</a>
+            </article>
+
+            <article class="plan plan--featured" data-aos="fade-up" data-aos-delay="100">
+              <span class="plan__badge">Most popular</span>
+              <h3 class="plan__name">Adventurer</h3>
+              <div class="plan__price">$349<span>/trip</span></div>
+              <p class="plan__period">Our most-loved 3-day experience</p>
+              <ul class="plan__features">
+                <li>3-day guided expedition</li>
+                <li>Small group of up to 6</li>
+                <li>Premium gear &amp; camping</li>
+                <li>Photo session included</li>
+                <li>24/7 priority support</li>
+              </ul>
+              <a class="btn btn--primary btn--block" href="register.html">Get started</a>
+            </article>
+
+            <article class="plan" data-aos="fade-up" data-aos-delay="200">
+              <h3 class="plan__name">Voyager</h3>
+              <div class="plan__price">$699<span>/trip</span></div>
+              <p class="plan__period">The full week-long journey</p>
+              <ul class="plan__features">
+                <li>7-day private expedition</li>
+                <li>Personal guide &amp; driver</li>
+                <li>Luxury glamping stays</li>
+                <li>All meals &amp; transfers</li>
+                <li>Dedicated trip manager</li>
+              </ul>
+              <a class="btn btn--outline btn--block" href="register.html">Get started</a>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="section--tight">
+        <div class="shell">
+          <div class="section-head section-head--center" data-aos="fade-up">
+            <span class="section-head__eyebrow">FAQ</span>
+            <h2 class="section-head__title">Questions &amp; answers</h2>
+          </div>
+          <div class="faq">
+            <div class="faq__item" data-aos="fade-up">
+              <p class="faq__q">Can I change or cancel my trip?</p>
+              <p class="faq__a">Absolutely. You can reschedule or cancel free of charge up to 7 days before departure, no questions asked.</p>
+            </div>
+            <div class="faq__item" data-aos="fade-up">
+              <p class="faq__q">Is travel insurance really included?</p>
+              <p class="faq__a">Yes — every plan comes with full medical and trip-cancellation insurance covering the whole duration of your journey.</p>
+            </div>
+            <div class="faq__item" data-aos="fade-up">
+              <p class="faq__q">Do I need previous trekking experience?</p>
+              <p class="faq__a">Not at all. The Explorer plan is beginner-friendly, and our guides adapt the pace to the group on every route.</p>
+            </div>
+            <div class="faq__item" data-aos="fade-up">
+              <p class="faq__q">What's your group size?</p>
+              <p class="faq__a">It depends on the plan — from intimate groups of 6 on the Adventurer plan to fully private trips on Voyager.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell">
+          <div class="cta" data-aos="zoom-in">
+            <h2 class="cta__title">Still not sure which plan to pick?</h2>
+            <p class="cta__text">Tell us about your dream trip and we'll build the perfect itinerary for you.</p>
+            <a class="btn btn--primary" href="contact.html">Talk to us</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  @@include('html/_footer.html')
+
+  <script src="plugins/aos/dist/aos.min.js"></script>
+  <script src="plugins/aos/js/aos_init.min.js"></script>
+  <script src="js/app.min.js"></script>
+
+</body>
+</html>

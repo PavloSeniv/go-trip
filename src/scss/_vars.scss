@@ -1,8 +1,56 @@
+// ======================================================================
+//  Design tokens — GoTrip
+// ======================================================================
+
+// ---- Brand palette ----------------------------------------------------
+$green-900: #0c2417; // darkest green (gradients, footer)
+$green-800: #103021;
+$green-700: #14492c;
+$green-600: #1f5e37; // brand green
+$green-500: #2c7048;
+
+$ink:       #0f1f1c; // primary text on light surfaces
+$ink-soft:  #5b6b64; // muted / secondary text
+$line:      #e4e8e6; // hairline borders
+
+$bg:        #f6f6f6; // page background (matches Figma)
+$surface:   #ffffff; // cards / panels
+
+$coral-1:   #ff7b4e;
+$coral-2:   #ff584e;
+
+// ---- Gradients --------------------------------------------------------
+$grad-coral: linear-gradient(129.54deg, #{$coral-1} 15.57%, #{$coral-2} 95.03%);
+$grad-coral-hover: linear-gradient(129.54deg, #ff8a61 5.57%, #ff6a52 90.03%);
+$grad-hero: linear-gradient(160deg, #2a6e44 0%, #1f5e37 38%, #103021 100%);
+
+// ---- Radius / shadow --------------------------------------------------
+$radius-sm: 14px;
+$radius:    24px;
+$radius-lg: 36px;
+$radius-pill: 100px;
+
+$shadow-sm:   0 8px 20px -10px rgba(15, 31, 28, 0.25);
+$shadow-card: 0 28px 55px -28px rgba(15, 31, 28, 0.28);
+$shadow-coral: 0 18px 32px -14px rgba(255, 88, 78, 0.55);
+$shadow-coral-hover: 0 24px 40px -12px rgba(255, 88, 78, 0.7);
+
+// ---- Layout -----------------------------------------------------------
+$container: 1440px;
+$content: 1320px;       // max width for readable content (sections stay full-bleed)
+$pad-x: 100px;          // desktop side padding
+$pad-x-mobile: 20px;
+
+// ---- Motion -----------------------------------------------------------
+$ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+$dur: 0.32s;
+
+// ---- Header CSS custom-properties (used by the header partial) --------
 :root {
-  --header-width-container: 1408px;
-  --header-bg-color: unset;
+  --header-width-container: 100%;
+  --header-bg-color: transparent;
   --header-font-family: Poppins;
-  --header-bg-color-mobile: #000;
+  --header-bg-color-mobile: #0c2417;
   --header-bg-menu-body-mobile: #1f5e37;
   --header-bg-menu-icon-mobile: #ffffff;
   --header-menu-link-color: #ffffff;

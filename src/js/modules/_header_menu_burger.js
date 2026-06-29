@@ -52,7 +52,10 @@ export function headerMenuBurger(params) {
       document.body.classList.toggle("_lock");
       iconMenu.classList.toggle("_active");
       menuBody.classList.toggle("_active");
-      menuButton.classList.toggle("_active");
+      if (menuButton) menuButton.classList.toggle("_active");
+      const opened = iconMenu.classList.contains("_active");
+      iconMenu.setAttribute("aria-expanded", opened ? "true" : "false");
+      iconMenu.setAttribute("aria-label", opened ? "Close menu" : "Open menu");
     });
   }
 
@@ -81,7 +84,7 @@ export function headerMenuBurger(params) {
           document.body.classList.remove("_lock");
           iconMenu.classList.remove("_active");
           menuBody.classList.remove("_active");
-          menuButton.classList.remove("_active");
+          if (menuButton) menuButton.classList.remove("_active");
         }
         //Для плавної прокрутки
         window.scrollTo({

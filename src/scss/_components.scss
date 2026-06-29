@@ -1,0 +1,443 @@
+// ======================================================================
+//  Reusable components
+// ======================================================================
+
+// ---- Buttons ----------------------------------------------------------
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 64px;
+  padding: 0 38px;
+  border-radius: $radius;
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: transform $dur $ease, box-shadow $dur $ease, background $dur $ease,
+    color $dur $ease;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+  &:active {
+    transform: translateY(-1px);
+  }
+  &:focus-visible {
+    outline: 3px solid rgba(255, 123, 78, 0.5);
+    outline-offset: 3px;
+  }
+
+  &--primary {
+    background: $grad-coral;
+    box-shadow: $shadow-coral;
+    &:hover {
+      background: $grad-coral-hover;
+      box-shadow: $shadow-coral-hover;
+      color: #fff;
+    }
+  }
+
+  &--ghost {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    color: #fff;
+    &:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: #fff;
+    }
+  }
+
+  &--outline {
+    background: transparent;
+    border: 2px solid $green-600;
+    color: $green-600;
+    box-shadow: none;
+    &:hover {
+      background: $green-600;
+      color: #fff;
+    }
+  }
+
+  &--sm {
+    height: 52px;
+    padding: 0 28px;
+    font-size: 16px;
+  }
+  &--block {
+    width: 100%;
+  }
+}
+
+// ---- Section heading (eyebrow + title) --------------------------------
+.section-head {
+  &__eyebrow {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $coral-2;
+    margin-bottom: 12px;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 1.2;
+    color: $ink;
+    letter-spacing: 0.5px;
+
+    span {
+      color: $green-600;
+    }
+    @media (max-width: 767px) {
+      font-size: 34px;
+    }
+    @media (max-width: 480px) {
+      font-size: 28px;
+    }
+  }
+  &__text {
+    margin-top: 18px;
+    max-width: 540px;
+    font-size: 18px;
+    color: $ink-soft;
+  }
+  &--center {
+    text-align: center;
+    .section-head__text {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  &--light {
+    .section-head__title {
+      color: #fff;
+      span { color: $coral-1; }
+    }
+    .section-head__text {
+      color: rgba(255, 255, 255, 0.75);
+    }
+  }
+}
+
+// ---- Card -------------------------------------------------------------
+.card {
+  background: $surface;
+  border-radius: $radius;
+  padding: 40px 34px;
+  box-shadow: $shadow-card;
+  transition: transform $dur $ease, box-shadow $dur $ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 40px 70px -30px rgba(15, 31, 28, 0.4);
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    border-radius: 20px;
+    margin-bottom: 26px;
+    background: linear-gradient(135deg, rgba(255, 123, 78, 0.16), rgba(255, 88, 78, 0.16));
+    color: $coral-2;
+    font-size: 32px;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 23px;
+    color: $ink;
+    margin-bottom: 12px;
+  }
+  &__text {
+    font-size: 16px;
+    color: $ink-soft;
+    line-height: 1.7;
+  }
+}
+
+// ---- Decorative ellipses & waves (reused across pages) ----------------
+.decor {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+
+  &--dots {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    width: 54px;
+    animation: float 6s $ease infinite;
+    span {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: rgba(78, 136, 122, 0.5);
+    }
+    span:nth-child(2),
+    span:nth-child(5) { opacity: 0.7; }
+  }
+
+  &--wave {
+    width: 90px;
+    height: 39px;
+    color: rgba(78, 136, 122, 0.55);
+    animation: float-soft 8s $ease infinite 0.4s;
+  }
+}
+
+// ---- Forms ------------------------------------------------------------
+.field {
+  display: block;
+  margin-bottom: 22px;
+
+  &__label {
+    display: block;
+    font-weight: 500;
+    font-size: 15px;
+    color: $ink;
+    margin-bottom: 10px;
+  }
+
+  &__input {
+    width: 100%;
+    height: 60px;
+    padding: 0 22px;
+    border: 2px solid $line;
+    border-radius: $radius-sm;
+    background: $surface;
+    font-size: 16px;
+    color: $ink;
+    transition: border-color $dur $ease, box-shadow $dur $ease;
+
+    &::placeholder {
+      color: #aab2ae;
+    }
+    &:hover {
+      border-color: #cdd4d0;
+    }
+    &:focus {
+      border-color: $green-600;
+      box-shadow: 0 0 0 4px rgba(31, 94, 55, 0.12);
+    }
+  }
+
+  textarea.field__input {
+    height: auto;
+    min-height: 140px;
+    padding: 18px 22px;
+    resize: vertical;
+  }
+
+  &__error {
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #e23b2e;
+  }
+}
+
+// Invalid state for any control
+input.is-invalid,
+textarea.is-invalid {
+  border-color: #e23b2e !important;
+  box-shadow: 0 0 0 4px rgba(226, 59, 46, 0.14) !important;
+}
+
+// Generic (non-.field) form error, e.g. under the newsletter pill
+.form__error {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #e23b2e;
+  text-align: center;
+}
+
+// Inline success panel (replaces a form on submit)
+.form-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  padding: 16px 0;
+  width: 100%;
+
+  &__icon {
+    display: grid;
+    place-items: center;
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    background: $grad-coral;
+    box-shadow: $shadow-coral;
+    color: #fff;
+    font-size: 30px;
+    line-height: 1;
+  }
+  &__text {
+    max-width: 440px;
+    font-size: 18px;
+    font-weight: 500;
+    color: $ink;
+    line-height: 1.6;
+  }
+}
+
+// Toast notification (nice replacement for window.alert)
+.toast-host {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @media (max-width: 575px) {
+    right: 16px;
+    left: 16px;
+    bottom: 16px;
+  }
+}
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 380px;
+  padding: 16px 22px;
+  background: #fff;
+  color: $ink;
+  border-radius: $radius-sm;
+  box-shadow: 0 24px 50px -16px rgba(15, 31, 28, 0.4);
+  border-left: 5px solid $coral-2;
+  font-weight: 500;
+  font-size: 15px;
+  transform: translateX(140%);
+  opacity: 0;
+  transition: transform 0.45s $ease, opacity 0.45s $ease;
+
+  &--show {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  &__icon {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: $grad-coral;
+    color: #fff;
+    font-size: 16px;
+  }
+}
+
+// Auth + contact card wrapper
+.auth {
+  display: flex;
+  justify-content: center;
+  padding: 90px $pad-x 120px;
+
+  @media (max-width: 575px) {
+    padding: 60px $pad-x-mobile 80px;
+  }
+
+  &__card {
+    width: 100%;
+    max-width: 480px;
+    background: $surface;
+    border-radius: $radius-lg;
+    padding: 52px 48px;
+    box-shadow: $shadow-card;
+
+    @media (max-width: 575px) {
+      padding: 36px 24px;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 34px;
+    color: $ink;
+    text-align: center;
+  }
+  &__subtitle {
+    text-align: center;
+    color: $ink-soft;
+    margin: 12px 0 36px;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 14px;
+    color: $ink-soft;
+    margin: -4px 0 26px;
+
+    a { color: $green-600; font-weight: 500; }
+    a:hover { color: $coral-2; }
+
+    label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+    input { accent-color: $green-600; width: 16px; height: 16px; }
+  }
+
+  &__divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 28px 0;
+    color: $ink-soft;
+    font-size: 14px;
+    &::before,
+    &::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: $line;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 14px;
+    button {
+      flex: 1;
+      height: 54px;
+      border: 2px solid $line;
+      border-radius: $radius-sm;
+      background: #fff;
+      font-weight: 500;
+      color: $ink;
+      transition: border-color $dur $ease, transform $dur $ease;
+      &:hover { border-color: #cdd4d0; transform: translateY(-2px); }
+    }
+  }
+
+  &__foot {
+    text-align: center;
+    margin-top: 28px;
+    color: $ink-soft;
+    font-size: 15px;
+    a { color: $green-600; font-weight: 600; }
+    a:hover { color: $coral-2; }
+  }
+}

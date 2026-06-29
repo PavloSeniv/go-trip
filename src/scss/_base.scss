@@ -1,0 +1,153 @@
+// ======================================================================
+//  Base / typography
+// ======================================================================
+
+html {
+  scroll-behavior: smooth;
+  height: auto; // override nullstyle's height:100% which caps the document & breaks page scroll
+  // IMPORTANT: never set overflow-x on <html>. Any value but `visible` (even
+  // `clip`) breaks AOS scroll-triggering here (elements stay at opacity:0 →
+  // blank page). Horizontal overflow is prevented at its sources instead
+  // (off-screen decor hidden + AOS disabled below 992px so nothing shifts).
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.65;
+  color: $ink;
+  background-color: $bg;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  height: auto; // override nullstyle's height:100% so the page scrolls normally
+  min-height: 100vh;
+  // NOTE: do NOT set overflow-x here. With html{height:100%} it forces
+  // overflow-y:auto, turning <body> into a viewport-locked scroll container —
+  // that breaks window.scrollTo, #anchor links and smooth scroll, and makes the
+  // page only touch-scrollable. Horizontal overflow is prevented at its sources
+  // instead (decor hidden + AOS disabled on small screens so nothing shifts).
+}
+
+a {
+  color: inherit;
+  transition: color $dur $ease;
+}
+
+// Visible keyboard focus for every interactive element (components may override)
+:focus-visible {
+  outline: 3px solid rgba(255, 123, 78, 0.7);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+// Skip-to-content link (visible only when focused)
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 1000;
+  padding: 12px 20px;
+  background: $green-600;
+  color: #fff;
+  border-radius: 0 0 12px 12px;
+  font-weight: 600;
+  transition: top $dur $ease;
+
+  &:focus {
+    top: 0;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  color: #fff;
+  background-color: $green-600;
+}
+
+.__container {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+// Content wrapper: capped for readability, gutters blend with the section bg
+.shell {
+  width: 100%;
+  max-width: $content;
+  margin: 0 auto;
+  padding: 0 $pad-x;
+
+  @media (max-width: 991px) {
+    padding: 0 40px;
+  }
+  @media (max-width: 575px) {
+    padding: 0 $pad-x-mobile;
+  }
+}
+
+// Visually-hidden (a11y) ------------------------------------------------
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Scrollbar -------------------------------------------------------------
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+  background-color: #d8ded9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $grad-hero;
+  border-radius: 100px;
+}
+
+// Floating decoration animation (bubbles / circles / waves) -------------
+@keyframes float {
+  0%,
+  100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+@keyframes float-soft {
+  0%,
+  100% { transform: translate(0, 0); }
+  50% { transform: translate(6px, -12px); }
+}
+@keyframes float-rot {
+  0%,
+  100% { transform: rotate(180deg) translateY(0); }
+  50% { transform: rotate(180deg) translateY(-16px); }
+}
+@keyframes sway {
+  0%,
+  100% { transform: translateX(0) rotate(0deg); }
+  50% { transform: translateX(12px) rotate(6deg); }
+}
+
+// Respect reduced-motion ------------------------------------------------
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -2,57 +2,43 @@
 <html lang="en">
 
 @@include('html/head.html',{
-  "title": "Gulp Build 2022"
+  "title": "GoTrip — Explore the Natural Beauty of Halmahera"
 })
 <body>
+
+    <a class="skip-link" href="#main">Skip to content</a>
 
     <div class="__container">
 
     @@include('html/_header_grid.html')
 
-    <main class="main">
+    <main id="main">
+
+    <section class="main">
 
       <div class="main__bg">
 
-        <div class="main-scene">
-          <div class="main-scene__info">
-            <p class="main-scene__sub-title">
-              exsplore the world
-            </p>
-            <h1 class="main-scene__title">
-              Explore The Natural
-              Beauty Of Halmahera
-              With Us
-            </h1>
-            <p class="main-scene__sup-title">explore the beauty of god's earth in a beautiful forest and have fun</p>
-            <div class="main-scene__button">
-              <a class="main-scene__link" href="#">Exsplore Now</a>
-            </div>
+        <div id="man-scene" class="main-scene__photo">
+          <div data-depth="0.4" class="main-scene__human">
+            <img width="100%" height="100%" class="main-scene__img" src="img/index/main/main_man-bg.png" alt="A traveler with a backpack exploring the outdoors">
           </div>
-
-          <div id="man-scene" class="main-scene__photo">
-            <div data-depth="0.4" class="main-scene__human">
-              <img width="100%" height="100%" class="main-scene__img" src="img/index/main/main_man-bg.png" alt="main_man-bg">
-            </div>
-          </div>
-
         </div>
 
         <div class="eclipse-scene eclipse-scene__main-1">
           <div class="eclipse-scene__big" data-aos="zoom-in" data-aos-delay="500">
-            <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle opacity="0.5" cx="15.5" cy="15.5" r="15.5" fill="#4E887A" />
             </svg>
 
           </div>
           <div class="eclipse-scene__middle" data-aos="zoom-in" data-aos-delay="300">
-            <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle opacity="0.5" cx="10.5" cy="10.5" r="10.5" fill="#4E887A" />
             </svg>
 
           </div>
           <div class="eclipse-scene__little" data-aos="zoom-in" data-aos-delay="100">
-            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle opacity="0.5" cx="8.5" cy="8.5" r="8.5" fill="#4E887A" />
             </svg>
           </div>
@@ -60,19 +46,19 @@
 
         <div class="eclipse-scene eclipse-scene__main-2">
           <div class="eclipse-scene__big-exploring" data-aos="zoom-in" data-aos-delay="500">
-            <svg width="41" height="41" viewbox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="41" height="41" viewbox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle opacity="0.5" cx="15.5" cy="15.5" r="15.5" fill="#4E887A" />
             </svg>
 
           </div>
           <div class="eclipse-scene__middle-exploring" data-aos="zoom-in" data-aos-delay="300">
-            <svg width="27" height="27" viewbox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="27" height="27" viewbox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle opacity="0.5" cx="10.5" cy="10.5" r="10.5" fill="#4E887A" />
             </svg>
 
           </div>
           <div class="eclipse-scene__little-exploring" data-aos="zoom-in" data-aos-delay="100">
-            <svg width="22" height="22" viewbox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="22" height="22" viewbox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle opacity="0.5" cx="8.5" cy="8.5" r="8.5" fill="#4E887A" />
             </svg>
           </div>
@@ -80,7 +66,7 @@
 
         <div class="wawe-scene wawe-scene__one-scene">
           <div class="wawe-scene__one">
-            <svg width="90" height="39" viewBox="0 0 90 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="90" height="39" viewBox="0 0 90 39" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path opacity="0.5"
                 d="M7 32L21.7972 17.3975C27.6386 11.633 37.0281 11.633 42.8695 17.3975L47.1305 21.6025C52.9719 27.367 62.3614 27.367 68.2028 21.6025L83 7"
                 stroke="#4E887A" stroke-width="13" stroke-linecap="round" />
@@ -89,7 +75,7 @@
           </div>
 
           <div class="wawe-scene__two">
-            <svg width="90" height="39" viewBox="0 0 90 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="90" height="39" viewBox="0 0 90 39" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path opacity="0.5"
                 d="M7 32L21.7972 17.3975C27.6386 11.633 37.0281 11.633 42.8695 17.3975L47.1305 21.6025C52.9719 27.367 62.3614 27.367 68.2028 21.6025L83 7"
                 stroke="#4E887A" stroke-width="13" stroke-linecap="round" />
@@ -100,7 +86,7 @@
 
         <div class="wawe-scene wawe-scene__two-scene">
           <div class="wawe-scene__one">
-            <svg width="90" height="39" viewbox="0 0 90 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="90" height="39" viewbox="0 0 90 39" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path opacity="0.5"
                 d="M7 32L21.7972 17.3975C27.6386 11.633 37.0281 11.633 42.8695 17.3975L47.1305 21.6025C52.9719 27.367 62.3614 27.367 68.2028 21.6025L83 7"
                 stroke="#4E887A" stroke-width="13" stroke-linecap="round" />
@@ -109,7 +95,7 @@
           </div>
 
           <div class="wawe-scene__two">
-            <svg width="90" height="39" viewbox="0 0 90 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="90" height="39" viewbox="0 0 90 39" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path opacity="0.5"
                 d="M7 32L21.7972 17.3975C27.6386 11.633 37.0281 11.633 42.8695 17.3975L47.1305 21.6025C52.9719 27.367 62.3614 27.367 68.2028 21.6025L83 7"
                 stroke="#4E887A" stroke-width="13" stroke-linecap="round" />
@@ -124,16 +110,33 @@
 
       </div>
 
-    </main>
+      <div class="main-scene">
+        <div class="main-scene__info">
+          <p class="main-scene__sub-title">
+            explore the world
+          </p>
+          <h1 class="main-scene__title">
+            Explore The Natural
+            Beauty Of Halmahera
+            With Us
+          </h1>
+          <p class="main-scene__sup-title">explore the beauty of god's earth in a beautiful forest and have fun</p>
+          <div class="main-scene__button">
+            <a class="main-scene__link" href="services.html">Explore Now</a>
+          </div>
+        </div>
+      </div>
+
+    </section>
 
     <section class="slider__container">
-      <div class="info">
-        <h1 class="info__title">
+      <div class="info" data-aos="fade-right">
+        <h2 class="info__title">
           Choice Of <span class="info__title-span">Destinations</span>
-        </h1>
+        </h2>
         <p class="info__sup-title">explore the beauty of god's earth in a beautiful forest and have fun</p>
         <div class="info__button">
-          <a class="" href="#">Exsplore Now</a>
+          <a class="" href="pricing.html">Explore Now</a>
         </div>
       </div>
 
@@ -145,13 +148,13 @@
 
     <section class="reviews-tourists reviews-tourists__container">
       <div class="reviews-tourists__photo">
-        <img src="img/index/customers/customers_photo.png" alt="customers_photo" class="reviews-tourists__img">
+        <img src="img/index/customers/customers_photo.png" alt="Happy GoTrip customer" class="reviews-tourists__img">
       </div>
-      <div class="reviews-tourists__info">
+      <div class="reviews-tourists__info" data-aos="fade-left">
         <h2 class="reviews-tourists__title">What do customers say <br> about us?</h2>
         <div class="reviews-tourists__user-info">
           <div class="reviews-tourists__logo">
-            <svg width="138" height="142" viewbox="0 0 138 142" fill="none" xmlns="http://www.w3.org/2000/svg"
+            <svg aria-hidden="true" focusable="false" width="138" height="142" viewbox="0 0 138 142" fill="none" xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink">
               <mask id="mask0_2_449" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="4" y="0" width="134"
                 height="134">
@@ -178,45 +181,76 @@
         <p class="reviews-tourists__subtitle">Very satisfying service makes it <br> comfortable, a beautiful place in
           the
           world. </p>
-        <div class="reviews-tourists__rating-area rating-area">
-          <input type="radio" id="star-5" name="rating" value="5">
-          <label for="star-5" title="Оценка «5»"></label>
-          <input type="radio" id="star-4" name="rating" value="4">
-          <label for="star-4" title="Оценка «4»"></label>
-          <input type="radio" id="star-3" name="rating" value="3">
-          <label for="star-3" title="Оценка «3»"></label>
-          <input type="radio" id="star-2" name="rating" value="2">
-          <label for="star-2" title="Оценка «2»"></label>
-          <input type="radio" id="star-1" name="rating" value="1">
-          <label for="star-1" title="Оценка «1»"></label>
-        </div>
+        <div class="reviews-tourists__stars" role="img" aria-label="Rated 5 out of 5 stars">★★★★★</div>
+      </div>
+    </section>
+
+    <section class="testimonials testimonials__container">
+      <div class="testimonials__grid">
+
+        <article class="testimonial" data-aos="fade-up">
+          <div class="testimonial__stars" role="img" aria-label="Rated 5 out of 5 stars">★★★★★</div>
+          <p class="testimonial__text">An unforgettable trip from start to finish. Our guide knew every hidden viewpoint — we felt safe and inspired the whole way.</p>
+          <div class="testimonial__author">
+            <span class="testimonial__avatar" aria-hidden="true">SK</span>
+            <div>
+              <div class="testimonial__name">Sarah Kim</div>
+              <div class="testimonial__geo">Seoul, South Korea</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial" data-aos="fade-up" data-aos-delay="100">
+          <div class="testimonial__stars" role="img" aria-label="Rated 5 out of 5 stars">★★★★★</div>
+          <p class="testimonial__text">Best decision of my year. The camping was cosy, the food amazing, and the photos I took are now framed on my wall.</p>
+          <div class="testimonial__author">
+            <span class="testimonial__avatar" aria-hidden="true">MR</span>
+            <div>
+              <div class="testimonial__name">Marco Rossi</div>
+              <div class="testimonial__geo">Milan, Italy</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial" data-aos="fade-up" data-aos-delay="200">
+          <div class="testimonial__stars" role="img" aria-label="Rated 4 out of 5 stars">★★★★<span class="testimonial__star-empty">★</span></div>
+          <p class="testimonial__text">Smooth booking, friendly guides and breathtaking nature. I'm already planning my next expedition with GoTrip.</p>
+          <div class="testimonial__author">
+            <span class="testimonial__avatar" aria-hidden="true">AO</span>
+            <div>
+              <div class="testimonial__name">Amara Okafor</div>
+              <div class="testimonial__geo">Lagos, Nigeria</div>
+            </div>
+          </div>
+        </article>
+
       </div>
     </section>
 
     <section class="exploring exploring__container">
-      <div class=exploring__block>
+      <div class="exploring__block" data-aos="zoom-in">
         <h2 class="exploring__title">Prepare Yourself And
           Start Exploring With Us.</h2>
         <p class="exploring__subtitle">There's the best discount for you today.</p>
         <div class="exploring__button">
-          <a class="exploring__link" href="#" target="__blank">Get Started</a>
+          <a class="exploring__link" href="pricing.html">Get Started</a>
         </div>
 
         <div class="eclipse-scene eclipse-scene__main-3">
           <div class="eclipse-scene__big-exploring" data-aos="zoom-in" data-aos-delay="500">
-            <svg width="41" height="41" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="41" height="41" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle opacity="0.5" cx="15.5" cy="15.5" r="15.5" fill="#FFBDA7" />
             </svg>
 
           </div>
           <div class="eclipse-scene__middle-exploring" data-aos="zoom-in" data-aos-delay="300">
-            <svg width="27" height="27" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="27" height="27" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle opacity="0.5" cx="10.5" cy="10.5" r="10.5" fill="#FFBDA7" />
             </svg>
 
           </div>
           <div class="eclipse-scene__little-exploring" data-aos="zoom-in" data-aos-delay="100">
-            <svg width="22" height="22" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle opacity="0.5" cx="8.5" cy="8.5" r="8.5" fill="#FFBDA7" />
             </svg>
           </div>
@@ -224,19 +258,19 @@
 
         <div class="eclipse-scene eclipse-scene__main-4">
           <div class="eclipse-scene__big-exploring" data-aos="zoom-in" data-aos-delay="500">
-            <svg width="41" height="41" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="41" height="41" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle opacity="0.5" cx="15.5" cy="15.5" r="15.5" fill="#FFBDA7" />
             </svg>
 
           </div>
           <div class="eclipse-scene__middle-exploring" data-aos="zoom-in" data-aos-delay="300">
-            <svg width="27" height="27" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="27" height="27" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle opacity="0.5" cx="10.5" cy="10.5" r="10.5" fill="#FFBDA7" />
             </svg>
 
           </div>
           <div class="eclipse-scene__little-exploring" data-aos="zoom-in" data-aos-delay="100">
-            <svg width="22" height="22" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle opacity="0.5" cx="8.5" cy="8.5" r="8.5" fill="#FFBDA7" />
             </svg>
           </div>
@@ -246,14 +280,17 @@
     </section>
 
     <section class="subscripe subscripe__container">
-      <h2 class="subscripe__title">
+      <h2 class="subscripe__title" data-aos="fade-up">
         Subscribe <br>
         To Our Newsletter</h2>
-      <form action="" method="POST" class="subscripe__block">
-        <input type="text" class="subscripe__input" placeholder="Yourmail@mail.com">
+      <form action="#" method="POST" class="subscripe__block" data-aos="fade-up" data-aos-delay="100" data-success="Thanks for subscribing to our newsletter!" data-success-mode="toast">
+        <label class="visually-hidden" for="subscribe-email">Your email</label>
+        <input id="subscribe-email" name="email" type="email" required class="subscripe__input" placeholder="your@email.com">
         <button type="submit" class="subscripe__button">Subscribe</button>
       </form>
     </section>
+
+    </main>
 
   </div>
 

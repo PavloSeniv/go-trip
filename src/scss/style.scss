@@ -17,74 +17,47 @@
 @import "_nullstyle";
 @import "_vars";
 @import "_mixin";
-@import "_vars";
+@import "_base";
+@import "_components";
 @import "header/_style_header";
 @import "footer/_style_footer";
+@import "_pages";
 /*-------- Import End -------*/
 
 /*-------- Page Index Start -------*/
 
-/*-------- All Start -------*/
-body {
-  background-color: #000000;
-}
+/*-------- Main Start -------*/
+.main {
+  background-color: $bg;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 160px; // top clears the fixed header; grows to fit content
 
-* {
-  font-family: Poppins;
-  font-weight: 400;
-  font-size: 17px;
-  color: #ffffff;
-}
+  @media (max-width: 767px) {
+    padding: 110px 0 120px;
+  }
 
-::selection {
-  color: #ffffff;
-  background-color: #000;
-}
-
-.__container {
-  max-width: 1440px;
-  margin: 0 auto;
-  @media (max-width: 1199px) {
+  &__bg {
+    width: 100%;
+    background: $grad-hero;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    // Fluid notched bottom (replaces the fixed 1440px image + 660px triangles)
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 90px), 0 100%);
   }
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
-  background-color: #bdbdbd;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #1f5e37;
-  background-image: -webkit-gradient(
-    linear,
-    0 0,
-    0 100%,
-    color-stop(0.5, rgba(255, 255, 255, 0.25)),
-    color-stop(0.5, transparent),
-    to(transparent)
-  );
-}
-
-/*-------- All End -------*/
-
-/*-------- Main Start -------*/
-.main {
-  background-color: #e5e5e5;
-  height: 100vh;
-
-  &__bg {
-    max-width: 1440px;
-    width: 100%;
-    background-image: url(../img/index/main/main-bg.png);
-    background-repeat: no-repeat;
-    height: 100vh;
-    position: absolute;
-    z-index: 2;
-    overflow: hidden;
+// Decorative bubbles & waves are placed with desktop-scale offsets, so on
+// narrow screens they bleed past the viewport (causing horizontal scroll) and
+// clutter the layout. Hide them on tablet/mobile; they animate on desktop only.
+.eclipse-scene,
+.wawe-scene {
+  @media (max-width: 991px) {
+    display: none;
   }
 }
 
@@ -95,21 +68,25 @@ body {
   &__main-1 {
     left: 48.5%;
     top: 18.5%;
+    animation: float 6s $ease infinite;
   }
   &__main-2 {
     right: 5.5%;
     bottom: 14.7%;
+    animation: float-soft 7s $ease infinite 0.5s;
   }
 
   &__main-3 {
     right: 8.1%;
     top: 10%;
+    animation: float 6.5s $ease infinite 0.3s;
   }
 
   &__main-4 {
     transform: rotate(180deg);
     bottom: 12%;
     left: 7.5%;
+    animation: float-rot 7.5s $ease infinite 0.8s;
   }
 
   &__big {
@@ -154,11 +131,13 @@ body {
   &__one-scene {
     bottom: 5.1%;
     left: 49.5%;
+    animation: sway 7s $ease infinite 0.2s;
   }
 
   &__two-scene {
     top: 24.5%;
     right: 11.8%;
+    animation: sway 8s $ease infinite 0.6s;
   }
 
   &__one {
@@ -172,63 +151,66 @@ body {
   }
 }
 
-.bg-triangle-left {
-  position: absolute;
-  z-index: 4;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 0;
-  border-bottom: 136px solid #e5e5e5;
-  border-right: 660px solid transparent;
-}
-
+// Old fixed-width triangles replaced by the .main__bg clip-path notch
+.bg-triangle-left,
 .bg-triangle-right {
-  position: absolute;
-  z-index: 4;
-  right: 0;
-  bottom: 0;
-  width: 0;
-  height: 0;
-  border-bottom: 136px solid #e5e5e5;
-  border-left: 660px solid transparent;
+  display: none;
 }
 
 .main-scene {
-  margin-top: 138px;
-  padding: 41px 100px;
-  display: flex;
-  position: absolute;
+  position: relative;
   z-index: 3;
+  width: 100%;
+  max-width: $content;
+  margin: 0 auto;
+  padding: 0 100px;
+
+  @media (max-width: 767px) {
+    padding: 0 20px;
+  }
 
   &__info {
-    flex: 0 0 50%;
+    max-width: 600px;
+
+    @media (max-width: 767px) {
+      max-width: 100%;
+    }
   }
 
   &__sub-title {
-    display: flex;
-    width: 227px;
+    display: inline-flex;
     height: 50px;
+    padding: 0 26px;
     left: 100px;
     top: 179px;
-    background: rgba(255, 255, 255, 0.25);
-    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(2px);
+    border-radius: 100px;
     align-items: center;
     justify-content: center;
     font-weight: 500;
-    font-size: 18px;
-    line-height: 27px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
   }
 
   &__title {
-    @include adaptiv-font(55, 23);
+    @include adaptiv-font(50, 26);
     font-family: Poppins;
     font-style: normal;
     font-weight: 600;
-    line-height: 82.5px;
+    line-height: 1.18;
     color: #fff;
     margin-top: 8px;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
+
+    @media (max-width: 767px) {
+      line-height: 1.25;
+      margin-top: 14px;
+      letter-spacing: 0.5px;
+    }
   }
 
   &__sup-title {
@@ -237,28 +219,34 @@ body {
     font-weight: 500;
     font-size: 25px;
     line-height: 37px;
-    color: #fff;
-    opacity: 0.5;
-    margin-top: 32px;
+    color: rgba(255, 255, 255, 0.82);
+    margin-top: 20px;
     letter-spacing: 0.9px;
+
+    @media (max-width: 767px) {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-top: 18px;
+    }
   }
 
   &__button {
     display: flex;
     width: 263px;
     height: 91px;
-    background: linear-gradient(129.54deg, #ff7b4e 15.57%, #ff584e 95.03%);
-    border-radius: 27px;
+    background: $grad-coral;
+    box-shadow: $shadow-coral;
+    border-radius: $radius;
     align-items: center;
     justify-content: center;
-    margin-top: 68px;
+    margin-top: 40px;
     color: #fefefe;
+    transition: transform $dur $ease, box-shadow $dur $ease, background $dur $ease;
     &:hover {
-      background: linear-gradient(100.54deg, #ff7b4e 20.57%, #ff584e 86.03%);
+      background: $grad-coral-hover;
       cursor: pointer;
-      & a {
-        color: #000;
-      }
+      transform: translateY(-4px);
+      box-shadow: $shadow-coral-hover;
     }
     & a {
       font-family: Poppins;
@@ -266,15 +254,45 @@ body {
       font-weight: 600;
       font-size: 25px;
       line-height: 37px;
+      color: #fff;
+    }
+
+    @media (max-width: 767px) {
+      margin-top: 36px;
+      width: 220px;
+      height: 64px;
+      & a { font-size: 18px; }
     }
   }
 
+  // Photo lives in the clipped background layer, anchored to the bottom-right
+  // of the content container and sized by viewport height so it's always whole.
   &__photo {
-    flex: 0 0 50%;
+    position: absolute;
+    bottom: 0;
+    right: max(24px, calc(50% - #{$content} / 2));
+    z-index: 2;
     user-select: none;
+    pointer-events: none;
+
+    @media (max-width: 991px) {
+      opacity: 0.4;
+      right: 0;
+    }
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+  &__img {
+    display: block;
+    width: auto;
+    height: 82vh;
+    max-height: 820px;
+    object-fit: contain;
+    object-position: bottom;
   }
   &__human {
-    left: 5% !important;
+    left: 0 !important;
   }
 }
 /*-------- Main End -------*/
@@ -282,7 +300,10 @@ body {
 /*-------- Slider Start -------*/
 .slider {
   &__info {
+    position: relative; // anchor for the slider arrows
+    align-self: flex-start; // don't stretch to the text column's height
     flex: 0 0 60%;
+    min-width: 0; // respect the 60% slot instead of growing to the slides' width
     @media (max-width: 767px) {
     flex: 0 0 100%;
     }
@@ -290,12 +311,15 @@ body {
 
   &__container {
     display: flex;
-    background-color: #e5e5e5;
+    background-color: $bg;
+    max-width: $content;
+    margin: 0 auto;
     padding: 0 0 0 100px;
     padding-bottom: 100px;
     overflow: hidden;
       @media (max-width: 767px) {
    flex-wrap: wrap;
+   padding: 0 20px 60px;
     }
   }
 }
@@ -315,6 +339,12 @@ body {
     color: #0f1f1c;
     flex-direction: column;
     margin-top: 123px;
+
+    @media (max-width: 767px) {
+      margin-top: 0;
+      font-size: 24px;
+      line-height: 1.3;
+    }
   }
 
   &__title-span {
@@ -325,6 +355,11 @@ body {
     line-height: 82px;
     color: #0f1f1c;
     letter-spacing: 1px;
+
+    @media (max-width: 767px) {
+      font-size: 40px;
+      line-height: 1.2;
+    }
   }
 
   &__sup-title {
@@ -343,18 +378,18 @@ body {
     display: flex;
     width: 223px;
     height: 79px;
-    background: linear-gradient(129.54deg, #ff7b4e 15.57%, #ff584e 95.03%);
-    border-radius: 27px;
+    background: $grad-coral;
+    box-shadow: $shadow-coral;
+    border-radius: $radius;
     align-items: center;
     justify-content: center;
     margin-top: 61px;
+    transition: transform $dur $ease, box-shadow $dur $ease, background $dur $ease;
     &:hover {
-      background: linear-gradient(129.54deg, #bd431b 15.57%, #8d150f 95.03%);
+      background: $grad-coral-hover;
       cursor: pointer;
-
-      & a {
-        color: #000;
-      }
+      transform: translateY(-4px);
+      box-shadow: $shadow-coral-hover;
     }
 
     & a {
@@ -363,37 +398,43 @@ body {
       font-weight: 600;
       font-size: 20px;
       line-height: 30px;
-      color: #fefefe;
+      color: #fff;
     }
   }
 }
 
 .__container-swiper {
   margin-top: 110px;
-  max-width: 1408px;
+  width: 100%; // fill the visible column instead of bleeding off-screen
 }
 /*-------- Slider End -------*/
 
 /*-------- Tourists Start -------*/
 .reviews-tourists {
-  background-color: #e5e5e5;
+  background-color: $bg;
   display: flex;
   column-gap: 68px;
     @media (max-width: 767px) {
-    flex-wrap: wrap;
+    flex-direction: column;
+    column-gap: 0;
+    gap: 36px;
     }
 
   &__container {
-    padding: 143px 100px;
+    max-width: $content;
+    margin: 0 auto;
+    padding: 143px 100px 80px;
       @media (max-width: 767px) {
-    padding: 20px 20px;
+    padding: 60px 20px 30px;
     }
   }
 
   &__photo {
-    flex: 0 0 38.5%;
+    flex: 1 1 38.5%; // shrinkable so basis + column-gap never exceeds 100%
+    min-width: 0;
      @media (max-width: 767px) {
-    flex: 0 0 100%;
+    flex: 0 0 auto;
+    width: 100%;
     }
   }
 
@@ -402,9 +443,11 @@ body {
   }
 
   &__info {
-    flex: 0 0 61.5%;
+    flex: 1 1 61.5%;
+    min-width: 0;
        @media (max-width: 767px) {
-    flex: 0 0 100%;
+    flex: 0 0 auto;
+    width: 100%;
     }
   }
 
@@ -415,12 +458,22 @@ body {
     font-size: 45px;
     line-height: 67px;
     color: #0f1f1c;
+
+    @media (max-width: 767px) {
+      font-size: 30px;
+      line-height: 1.3;
+    }
   }
 
   &__user-info {
     margin-top: 38px;
     display: flex;
     column-gap: 33px;
+
+    @media (max-width: 767px) {
+      column-gap: 18px;
+      margin-top: 28px;
+    }
   }
 
   &__logo {
@@ -447,6 +500,11 @@ body {
     font-size: 33px;
     line-height: 49px;
     color: #0f1f1c;
+
+    @media (max-width: 767px) {
+      font-size: 22px;
+      line-height: 1.3;
+    }
   }
 
   &__geo {
@@ -458,6 +516,11 @@ body {
     color: #0f1f1c;
     opacity: 0.5;
     margin-top: 10px;
+
+    @media (max-width: 767px) {
+      font-size: 16px;
+      line-height: 1.4;
+    }
   }
 
   &__subtitle {
@@ -470,69 +533,207 @@ body {
     opacity: 0.5;
     letter-spacing: 1px;
     margin-top: 48px;
+
+    @media (max-width: 767px) {
+      font-size: 17px;
+      line-height: 1.6;
+      margin-top: 28px;
+    }
   }
 
-  &__rating-area {
-    margin-top: 20px;
-  }
-}
+  &__stars {
+    margin-top: 22px;
+    font-size: 40px;
+    line-height: 1;
+    letter-spacing: 8px;
+    color: #ffc107;
 
-.rating-area {
-  overflow: hidden;
-  width: 335px;
-
-  &:not(:checked) > input {
-    display: none;
-  }
-
-  &:not(:checked) > label {
-    float: right;
-    width: 67px;
-    padding: 0;
-    cursor: pointer;
-    font-size: 69px;
-    line-height: 69px;
-    color: #d3d3d3;
-    text-shadow: 1px 1px #bbb;
-  }
-
-  &:not(:checked) > label:before {
-    content: "★";
-  }
-
-  & > input:checked ~ label {
-    color: gold;
-    text-shadow: 1px 1px #c60;
-  }
-
-  &:not(:checked) > label:hover,
-  &:not(:checked) > label:hover ~ label {
-    color: gold;
-  }
-
-  & > input:checked + label:hover,
-  & > input:checked + label:hover ~ label,
-  & > input:checked ~ label:hover,
-  & > input:checked ~ label:hover ~ label,
-  & > label:hover ~ input:checked ~ label {
-    color: gold;
-    text-shadow: 1px 1px goldenrod;
-  }
-
-  & .rate-area > label:active {
-    position: relative;
+    @media (max-width: 767px) {
+      font-size: 30px;
+      letter-spacing: 5px;
+    }
   }
 }
 /*-------- Tourists End -------*/
 
-/*-------- Exploring Start -------*/
-.exploring {
-  background-color: #e5e5e5;
+/*-------- Testimonials Start -------*/
+.testimonials {
+  background-color: $bg;
 
   &__container {
-    padding: 105px 100px;
+    max-width: $content;
+    margin: 0 auto;
+    padding: 0 100px 110px;
+
+    @media (max-width: 767px) {
+      padding: 0 20px 70px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    @media (max-width: 991px) {
+      grid-template-columns: 1fr;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.testimonial {
+  background: $surface;
+  border-radius: $radius;
+  padding: 34px 32px;
+  box-shadow: $shadow-card;
+  transition: transform $dur $ease, box-shadow $dur $ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 40px 70px -30px rgba(15, 31, 28, 0.4);
+  }
+
+  &__stars {
+    color: #ffc107;
+    font-size: 20px;
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+  }
+  &__star-empty {
+    color: #d8ded9;
+  }
+  &__text {
+    color: $ink-soft;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  &__avatar {
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $grad-coral;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  &__name {
+    font-weight: 600;
+    color: $ink;
+    font-size: 16px;
+  }
+  &__geo {
+    color: $ink-soft;
+    font-size: 14px;
+  }
+}
+/*-------- Testimonials End -------*/
+
+/*-------- Slider image polish (rounded + hover zoom) -------*/
+.slider-home__img {
+  border-radius: 30px;
+  overflow: hidden;
+  height: 430px; // uniform card height for all destination photos
+
+  @media (max-width: 575px) {
+    height: 380px;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // crop tall/wide photos to a consistent frame
+    border-radius: 30px;
+    transition: transform 0.6s $ease;
+  }
+  &:hover img {
+    transform: scale(1.07);
+  }
+}
+
+// Slider navigation — coral arrows pinned to each edge of the visible frame
+// (prev left, next right). Overlays the slide band (top matches the swiper's
+// top margin, bottom matches the frame) so the arrows sit centred on the photos
+// and stay on-screen even though the slides themselves bleed off to the right.
+.swiper-nav {
+  position: absolute;
+  top: 110px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  pointer-events: none; // only the buttons should capture clicks
+
+  @media (max-width: 767px) {
+    top: 130px;
+    padding: 0 8px;
+  }
+  @media (max-width: 575px) {
+    padding: 0 4px;
+  }
+}
+
+.swiper-nav .swiper-button-prev,
+.swiper-nav .swiper-button-next {
+  position: static; // become flex items so space-between pins them to each edge
+  pointer-events: auto;
+  width: 56px;
+  height: 56px;
+  margin: 0;
+  padding: 0;
+  top: auto;
+  left: auto;
+  right: auto;
+  border-radius: 50%;
+  background: $grad-coral;
+  box-shadow: $shadow-coral;
+  transition: transform $dur $ease, box-shadow $dur $ease, background $dur $ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    background: $grad-coral-hover;
+    box-shadow: $shadow-coral-hover;
+  }
+
+  &::after {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  @media (max-width: 575px) {
+    width: 46px;
+    height: 46px;
+    &::after { font-size: 15px; }
+  }
+}
+
+/*-------- Exploring Start -------*/
+.exploring {
+  background-color: $bg;
+
+  &__container {
+    max-width: $content;
+    margin: 0 auto;
+    padding: 80px 100px;
       @media (max-width: 767px) {
-    padding: 105px 20px;
+    padding: 60px 20px;
     }
   }
 
@@ -573,19 +774,20 @@ body {
   &__button {
     width: 225px;
     height: 79px;
-    background: linear-gradient(129.54deg, #ff7b4e 15.57%, #ff584e 95.03%);
-    border-radius: 27px;
+    background: $grad-coral;
+    box-shadow: $shadow-coral;
+    border-radius: $radius;
     color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 57px;
+    transition: transform $dur $ease, box-shadow $dur $ease, background $dur $ease;
     &:hover {
       cursor: pointer;
-      background: linear-gradient(129.54deg, #d14618 15.57%, #ad160e 95.03%);
-      & a {
-        color: #000;
-      }
+      background: $grad-coral-hover;
+      transform: translateY(-4px);
+      box-shadow: $shadow-coral-hover;
     }
   }
 
@@ -601,85 +803,120 @@ body {
 
 /*-------- Subcripe Start -------*/
 .subscripe {
-  background-color: #e5e5e5;
+  background-color: $bg;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   &__container {
+    max-width: $content;
+    margin: 0 auto;
     padding: 21px 106px 106px 106px;
       @media (max-width: 767px) {
-    padding: 21px 20px;
+    padding: 21px 20px 70px;
     }
   }
 
   &__title {
-    width: 494px;
+    max-width: 494px;
+    width: 100%;
     font-family: Poppins;
     font-style: normal;
     font-weight: 600;
     font-size: 55px;
-    line-height: 82px;
+    line-height: 1.3;
     text-align: center;
     color: #0f1f1c;
+
+    @media (max-width: 767px) {
+      font-size: 34px;
+    }
   }
 
   &__block {
-    max-width: 800px;
+    max-width: 540px;
     width: 100%;
-    background: linear-gradient(0deg, #ffffff, #ffffff), #c4c4c4;
-    border-radius: 35px;
-    padding: 12px 15px 12px 46px;
+    background: #ffffff;
+    box-shadow: $shadow-card;
+    border-radius: $radius-pill;
+    padding: 7px 7px 7px 24px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    margin-top: 60px;
+    gap: 10px;
+    margin-top: 44px;
+
+    @media (max-width: 575px) {
+      flex-direction: column;
+      gap: 12px;
+      padding: 12px;
+      border-radius: 22px;
+    }
   }
 
   &__input {
-    width: 58%;
+    flex: 1 1 auto;
+    min-width: 0;
     font-family: Poppins;
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
-    line-height: 36px;
-    color: #000;
-    opacity: 0.5;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #0f1f1c;
+    background: transparent;
 
     &::placeholder {
       font-family: Poppins;
-      font-style: normal;
       font-weight: 500;
-      font-size: 24px;
-      line-height: 36px;
+      font-size: 16px;
       color: #0f1f1c;
       opacity: 0.5;
     }
 
-    &:hover {
-      cursor: pointer;
-      -webkit-box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6);
-      -moz-box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6);
-      box-shadow: 0px 5px 5px -5px rgba(34, 60, 80, 0.6);
+    @media (max-width: 575px) {
+      width: 100%;
+      text-align: center;
     }
   }
 
   &__button {
-    width: 300px;
-    height: 105px;
-    left: 805px;
-    top: 3416px;
-    background: linear-gradient(129.54deg, #ff7b4e 15.57%, #ff584e 95.03%), #ffffff;
-    border-radius: 35px;
+    flex: 0 0 auto;
+    height: 52px;
+    padding: 0 30px;
+    background: $grad-coral;
+    box-shadow: $shadow-coral;
+    border-radius: $radius-pill;
     font-family: Poppins;
     font-style: normal;
     font-weight: 600;
-    font-size: 25px;
-    line-height: 37px;
+    font-size: 16px;
+    line-height: 1;
     color: #ffffff;
+    transition: transform $dur $ease, box-shadow $dur $ease, background $dur $ease;
     &:hover {
-      background: linear-gradient(129.54deg, #d38064 15.57%, #ec261c 95.03%), #ffffff;
-      color: #000000;
+      background: $grad-coral-hover;
+      transform: translateY(-3px);
+      box-shadow: $shadow-coral-hover;
+    }
+
+    @media (max-width: 575px) {
+      width: 100%;
+    }
+  }
+
+  // Validation message sits directly under the input (left-aligned with it),
+  // matching the pill's width so it lines up beneath the field — not the button.
+  .form__error {
+    width: 100%;
+    max-width: 540px;
+    margin: 12px auto 0;
+    padding-left: 24px;
+    text-align: left;
+
+    @media (max-width: 575px) {
+      padding-left: 0;
+      text-align: center;
     }
   }
 }

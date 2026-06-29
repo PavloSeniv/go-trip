@@ -3,12 +3,11 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="author" content="Seniv Pavlo, https://github.com/PavloSeniv">
   <meta name="copyright" content="Seniv Pavlo">
-  <title>Gulp Build 2022</title>
+  <title>GoTrip — Explore the Natural Beauty of Halmahera</title>
 
   <!-- ======== Попереднє завантаження фото ======== -->
   <!-- <link rel="preload" as="image" href="img/index/main_man-bg.png" imagesrcset="img/index/main_man-bg.webp"
@@ -22,23 +21,25 @@
   <!-- <link rel="icon" href="img/favicon.png" type="image/png"> -->
 
   <!-- ======== AOS style ======== -->
-  <link rel="stylesheet" href="plugins/aos/dist/aos.min.css?_v=20211227210740">
+  <link rel="stylesheet" href="plugins/aos/dist/aos.min.css?_v=20260630002117">
 
   <!-- ======== Bootstrap style ======== -->
-  <!-- <link rel="stylesheet" href="plugins/bootstrap_5.1.0/dist/css/bootstrap.min.css?_v=20211227210740"> -->
+  <!-- <link rel="stylesheet" href="plugins/bootstrap_5.1.0/dist/css/bootstrap.min.css?_v=20260630002117"> -->
 
   <!-- ======== Swiper ======== -->
-  <link rel="stylesheet" href="plugins/swiper/dist/swiper_bundle.min.css?_v=20211227210740" />
+  <link rel="stylesheet" href="plugins/swiper/dist/swiper_bundle.min.css?_v=20260630002117" />
   <!-- ======== Style for swiper in home ======== -->
-  <link rel="stylesheet" href="plugins/swiper/style/slider_home.min.css?_v=20211227210740">
+  <link rel="stylesheet" href="plugins/swiper/style/slider_home.min.css?_v=20260630002117">
 
   <!-- ======== Style for swiper in other page ======== -->
-  <!-- <link rel="stylesheet" href="plugins/swiper/style/slider_version_2.min.css?_v=20211227210740"> -->
+  <!-- <link rel="stylesheet" href="plugins/swiper/style/slider_version_2.min.css?_v=20260630002117"> -->
 
   <!-- ======== Style ======== -->
-  <link rel="stylesheet" href="css/style.min.css?_v=20211227210740">
+  <link rel="stylesheet" href="css/style.min.css?_v=20260630002117">
 </head>
 <body>
+
+    <a class="skip-link" href="#main">Skip to content</a>
 
     <div class="__container">
 
@@ -46,49 +47,49 @@
   <div class="header__container">
     <div class="header__block-logo">
 
-      <a data-aos="zoom-in" tabindex="2" class="header__logo" href="index.html">
-        GoTrip
+      <a data-aos="zoom-in" class="header__logo" href="index.html">
+        Go<span>Trip</span>
       </a>
 
-      <a tabindex="" class="header__logo-mobile-title" href=" index.html">Menu</a>
+      <a class="header__logo-mobile-title" href="index.html">Menu</a>
 
       <div class="header__menu menu">
-        <div class="menu__icon">
+        <button type="button" class="menu__icon" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
           <span></span>
-        </div>
+        </button>
       </div>
     </div>
 
     <div class="header__block-nav">
-      <div class="menu__body">
+      <div class="menu__body" id="primary-nav">
 
-        <nav class="menu__nav">
+        <nav class="menu__nav" aria-label="Main navigation">
           <ul class="menu__list">
-            <li tabindex="1" class="menu__list-link menu__list-link-1">
-              <a class="menu__link" href="#">Home</a>
+            <li class="menu__list-link menu__list-link-1">
+              <a class="menu__link" href="index.html">Home</a>
             </li>
 
-            <li tabindex="2" class="menu__list-link menu__list-link-2">
-              <a class="menu__link" href="#">Services</a>
+            <li class="menu__list-link menu__list-link-2">
+              <a class="menu__link" href="services.html">Services</a>
             </li>
 
-            <li tabindex="3" class="menu__list-link menu__list-link-3">
-              <a class="menu__link" href="#"> Pricing</a>
+            <li class="menu__list-link menu__list-link-3">
+              <a class="menu__link" href="pricing.html">Pricing</a>
             </li>
 
-            <li tabindex="4" class="menu__list-link menu__list-link-4">
-              <a class="menu__link" href="#">Contack</a>
+            <li class="menu__list-link menu__list-link-4">
+              <a class="menu__link" href="contact.html">Contact</a>
             </li>
           </ul>
         </nav>
 
         <div class="log-in-out">
-          <div tabindex="9" class="menu__list-link-login">
-            <a class="menu__link menu__login" href="#">Sign up</a>
+          <div class="menu__list-link-login">
+            <a class="menu__link menu__login" href="register.html">Sign up</a>
           </div>
 
-          <div tabindex="10" class="menu__list-link-sign-up">
-            <a class="menu__link menu__sign-up" href="#">Login</a>
+          <div class="menu__list-link-sign-up">
+            <a class="menu__link menu__sign-up" href="login.html">Login</a>
           </div>
         </div>
 
@@ -98,49 +99,34 @@
   </div>
 </header>
 
-    <main class="main">
+
+    <main id="main">
+
+    <section class="main">
 
       <div class="main__bg">
 
-        <div class="main-scene">
-          <div class="main-scene__info">
-            <p class="main-scene__sub-title">
-              exsplore the world
-            </p>
-            <h1 class="main-scene__title">
-              Explore The Natural
-              Beauty Of Halmahera
-              With Us
-            </h1>
-            <p class="main-scene__sup-title">explore the beauty of god's earth in a beautiful forest and have fun</p>
-            <div class="main-scene__button">
-              <a class="main-scene__link" href="#">Exsplore Now</a>
-            </div>
+        <div id="man-scene" class="main-scene__photo">
+          <div data-depth="0.4" class="main-scene__human">
+            <picture><source srcset="img/index/main/main_man-bg.webp" type="image/webp"><img width="100%" height="100%" class="main-scene__img" src="img/index/main/main_man-bg.png" alt="A traveler with a backpack exploring the outdoors"></picture>
           </div>
-
-          <div id="man-scene" class="main-scene__photo">
-            <div data-depth="0.4" class="main-scene__human">
-              <picture><source srcset="img/index/main/main_man-bg.webp" type="image/webp"><img width="100%" height="100%" class="main-scene__img" src="img/index/main/main_man-bg.png" alt="main_man-bg"></picture>
-            </div>
-          </div>
-
         </div>
 
         <div class="eclipse-scene eclipse-scene__main-1">
           <div class="eclipse-scene__big" data-aos="zoom-in" data-aos-delay="500">
-            <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle opacity="0.5" cx="15.5" cy="15.5" r="15.5" fill="#4E887A" />
             </svg>
 
           </div>
           <div class="eclipse-scene__middle" data-aos="zoom-in" data-aos-delay="300">
-            <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle opacity="0.5" cx="10.5" cy="10.5" r="10.5" fill="#4E887A" />
             </svg>
 
           </div>
           <div class="eclipse-scene__little" data-aos="zoom-in" data-aos-delay="100">
-            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle opacity="0.5" cx="8.5" cy="8.5" r="8.5" fill="#4E887A" />
             </svg>
           </div>
@@ -148,19 +134,19 @@
 
         <div class="eclipse-scene eclipse-scene__main-2">
           <div class="eclipse-scene__big-exploring" data-aos="zoom-in" data-aos-delay="500">
-            <svg width="41" height="41" viewbox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="41" height="41" viewbox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle opacity="0.5" cx="15.5" cy="15.5" r="15.5" fill="#4E887A" />
             </svg>
 
           </div>
           <div class="eclipse-scene__middle-exploring" data-aos="zoom-in" data-aos-delay="300">
-            <svg width="27" height="27" viewbox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="27" height="27" viewbox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle opacity="0.5" cx="10.5" cy="10.5" r="10.5" fill="#4E887A" />
             </svg>
 
           </div>
           <div class="eclipse-scene__little-exploring" data-aos="zoom-in" data-aos-delay="100">
-            <svg width="22" height="22" viewbox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="22" height="22" viewbox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle opacity="0.5" cx="8.5" cy="8.5" r="8.5" fill="#4E887A" />
             </svg>
           </div>
@@ -168,7 +154,7 @@
 
         <div class="wawe-scene wawe-scene__one-scene">
           <div class="wawe-scene__one">
-            <svg width="90" height="39" viewBox="0 0 90 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="90" height="39" viewBox="0 0 90 39" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path opacity="0.5"
                 d="M7 32L21.7972 17.3975C27.6386 11.633 37.0281 11.633 42.8695 17.3975L47.1305 21.6025C52.9719 27.367 62.3614 27.367 68.2028 21.6025L83 7"
                 stroke="#4E887A" stroke-width="13" stroke-linecap="round" />
@@ -177,7 +163,7 @@
           </div>
 
           <div class="wawe-scene__two">
-            <svg width="90" height="39" viewBox="0 0 90 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="90" height="39" viewBox="0 0 90 39" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path opacity="0.5"
                 d="M7 32L21.7972 17.3975C27.6386 11.633 37.0281 11.633 42.8695 17.3975L47.1305 21.6025C52.9719 27.367 62.3614 27.367 68.2028 21.6025L83 7"
                 stroke="#4E887A" stroke-width="13" stroke-linecap="round" />
@@ -188,7 +174,7 @@
 
         <div class="wawe-scene wawe-scene__two-scene">
           <div class="wawe-scene__one">
-            <svg width="90" height="39" viewbox="0 0 90 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="90" height="39" viewbox="0 0 90 39" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path opacity="0.5"
                 d="M7 32L21.7972 17.3975C27.6386 11.633 37.0281 11.633 42.8695 17.3975L47.1305 21.6025C52.9719 27.367 62.3614 27.367 68.2028 21.6025L83 7"
                 stroke="#4E887A" stroke-width="13" stroke-linecap="round" />
@@ -197,7 +183,7 @@
           </div>
 
           <div class="wawe-scene__two">
-            <svg width="90" height="39" viewbox="0 0 90 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="90" height="39" viewbox="0 0 90 39" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path opacity="0.5"
                 d="M7 32L21.7972 17.3975C27.6386 11.633 37.0281 11.633 42.8695 17.3975L47.1305 21.6025C52.9719 27.367 62.3614 27.367 68.2028 21.6025L83 7"
                 stroke="#4E887A" stroke-width="13" stroke-linecap="round" />
@@ -212,16 +198,33 @@
 
       </div>
 
-    </main>
+      <div class="main-scene">
+        <div class="main-scene__info">
+          <p class="main-scene__sub-title">
+            explore the world
+          </p>
+          <h1 class="main-scene__title">
+            Explore The Natural
+            Beauty Of Halmahera
+            With Us
+          </h1>
+          <p class="main-scene__sup-title">explore the beauty of god's earth in a beautiful forest and have fun</p>
+          <div class="main-scene__button">
+            <a class="main-scene__link" href="services.html">Explore Now</a>
+          </div>
+        </div>
+      </div>
+
+    </section>
 
     <section class="slider__container">
-      <div class="info">
-        <h1 class="info__title">
+      <div class="info" data-aos="fade-right">
+        <h2 class="info__title">
           Choice Of <span class="info__title-span">Destinations</span>
-        </h1>
+        </h2>
         <p class="info__sup-title">explore the beauty of god's earth in a beautiful forest and have fun</p>
         <div class="info__button">
-          <a class="" href="#">Exsplore Now</a>
+          <a class="" href="pricing.html">Explore Now</a>
         </div>
       </div>
 
@@ -235,33 +238,59 @@
         <div data-hash="slide-1" class="swiper-slide">
             <section class="slider-home">
                 <div class="slider-home__img" style="width: 100%">
-                    <picture><source srcset="img/index/main_slider/slider_destinations_1.webp" type="image/webp"><img width="335px" height="auto" src="img/index/main_slider/slider_destinations_1.png" alt="slider_destinations_1"></picture>
+                    <picture><source srcset="img/index/main_slider/slider_destinations_1.webp" type="image/webp"><img width="335px" height="auto" src="img/index/main_slider/slider_destinations_1.png" alt="Misty forest road winding through Halmahera"></picture>
                 </div>
             </section>
         </div>
 
-          <div data-hash="slide-2" class="swiper-slide">
+        <div data-hash="slide-2" class="swiper-slide">
             <section class="slider-home">
                 <div class="slider-home__img" style="width: 100%">
-                <picture><source srcset="img/index/main_slider/slider_destinations_2.webp" type="image/webp"><img width="335px" height="auto" src="img/index/main_slider/slider_destinations_2.png" alt="slider_destinations_2"></picture>
-              </div>
+                  <picture><source srcset="img/index/main_slider/slider_destinations_2.webp" type="image/webp"><img width="335px" height="auto" src="img/index/main_slider/slider_destinations_2.png" alt="Tall pine forest shrouded in fog"></picture>
+                </div>
             </section>
-          </div>
+        </div>
 
-            <div data-hash="slide-3" class="swiper-slide">
+        <div data-hash="slide-3" class="swiper-slide">
             <section class="slider-home">
                 <div class="slider-home__img" style="width: 100%;">
-                  <picture><source srcset="img/index/main_slider/slider_destinations_3.webp" type="image/webp"><img style="background-size: cover; border-radius: 30px;" width="335px" height="400px" src="img/index/main_slider/slider_destinations_3.png" alt="slider_destinations_3"></picture>
+                  <picture><source srcset="img/index/main_slider/slider_destinations_3.webp" type="image/webp"><img width="335px" height="auto" src="img/index/main_slider/slider_destinations_3.png" alt="A lone traveler on a forest trail at dusk"></picture>
                 </div>
-              </section>
-            </div>
+            </section>
+        </div>
+
+        <div data-hash="slide-4" class="swiper-slide">
+            <section class="slider-home">
+                <div class="slider-home__img" style="width: 100%">
+                  <picture><source srcset="img/index/main_slider/slider_destinations_4.webp" type="image/webp"><img width="335px" height="auto" src="img/index/main_slider/slider_destinations_4.jpg" alt="Snow-capped mountain valley with pine forest"></picture>
+                </div>
+            </section>
+        </div>
+
+        <div data-hash="slide-5" class="swiper-slide">
+            <section class="slider-home">
+                <div class="slider-home__img" style="width: 100%">
+                  <picture><source srcset="img/index/main_slider/slider_destinations_5.webp" type="image/webp"><img width="335px" height="auto" src="img/index/main_slider/slider_destinations_5.jpg" alt="Turquoise alpine lake with a rowing boat"></picture>
+                </div>
+            </section>
+        </div>
+
+        <div data-hash="slide-6" class="swiper-slide">
+            <section class="slider-home">
+                <div class="slider-home__img" style="width: 100%">
+                  <picture><source srcset="img/index/main_slider/slider_destinations_6.webp" type="image/webp"><img width="335px" height="auto" src="img/index/main_slider/slider_destinations_6.jpg" alt="Sunlit forest valley beneath granite cliffs"></picture>
+                </div>
+            </section>
+        </div>
 
     </div>
 
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
+</div>
 
-
+<!-- Navigation buttons — pinned to the visible slider frame (prev left, next right) -->
+<div class="swiper-nav">
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
 </div>
 
 
@@ -270,13 +299,13 @@
 
     <section class="reviews-tourists reviews-tourists__container">
       <div class="reviews-tourists__photo">
-        <picture><source srcset="img/index/customers/customers_photo.webp" type="image/webp"><img src="img/index/customers/customers_photo.png" alt="customers_photo" class="reviews-tourists__img"></picture>
+        <picture><source srcset="img/index/customers/customers_photo.webp" type="image/webp"><img src="img/index/customers/customers_photo.png" alt="Happy GoTrip customer" class="reviews-tourists__img"></picture>
       </div>
-      <div class="reviews-tourists__info">
+      <div class="reviews-tourists__info" data-aos="fade-left">
         <h2 class="reviews-tourists__title">What do customers say <br> about us?</h2>
         <div class="reviews-tourists__user-info">
           <div class="reviews-tourists__logo">
-            <svg width="138" height="142" viewbox="0 0 138 142" fill="none" xmlns="http://www.w3.org/2000/svg"
+            <svg aria-hidden="true" focusable="false" width="138" height="142" viewbox="0 0 138 142" fill="none" xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink">
               <mask id="mask0_2_449" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="4" y="0" width="134"
                 height="134">
@@ -303,45 +332,76 @@
         <p class="reviews-tourists__subtitle">Very satisfying service makes it <br> comfortable, a beautiful place in
           the
           world. </p>
-        <div class="reviews-tourists__rating-area rating-area">
-          <input type="radio" id="star-5" name="rating" value="5">
-          <label for="star-5" title="Оценка «5»"></label>
-          <input type="radio" id="star-4" name="rating" value="4">
-          <label for="star-4" title="Оценка «4»"></label>
-          <input type="radio" id="star-3" name="rating" value="3">
-          <label for="star-3" title="Оценка «3»"></label>
-          <input type="radio" id="star-2" name="rating" value="2">
-          <label for="star-2" title="Оценка «2»"></label>
-          <input type="radio" id="star-1" name="rating" value="1">
-          <label for="star-1" title="Оценка «1»"></label>
-        </div>
+        <div class="reviews-tourists__stars" role="img" aria-label="Rated 5 out of 5 stars">★★★★★</div>
+      </div>
+    </section>
+
+    <section class="testimonials testimonials__container">
+      <div class="testimonials__grid">
+
+        <article class="testimonial" data-aos="fade-up">
+          <div class="testimonial__stars" role="img" aria-label="Rated 5 out of 5 stars">★★★★★</div>
+          <p class="testimonial__text">An unforgettable trip from start to finish. Our guide knew every hidden viewpoint — we felt safe and inspired the whole way.</p>
+          <div class="testimonial__author">
+            <span class="testimonial__avatar" aria-hidden="true">SK</span>
+            <div>
+              <div class="testimonial__name">Sarah Kim</div>
+              <div class="testimonial__geo">Seoul, South Korea</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial" data-aos="fade-up" data-aos-delay="100">
+          <div class="testimonial__stars" role="img" aria-label="Rated 5 out of 5 stars">★★★★★</div>
+          <p class="testimonial__text">Best decision of my year. The camping was cosy, the food amazing, and the photos I took are now framed on my wall.</p>
+          <div class="testimonial__author">
+            <span class="testimonial__avatar" aria-hidden="true">MR</span>
+            <div>
+              <div class="testimonial__name">Marco Rossi</div>
+              <div class="testimonial__geo">Milan, Italy</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial" data-aos="fade-up" data-aos-delay="200">
+          <div class="testimonial__stars" role="img" aria-label="Rated 4 out of 5 stars">★★★★<span class="testimonial__star-empty">★</span></div>
+          <p class="testimonial__text">Smooth booking, friendly guides and breathtaking nature. I'm already planning my next expedition with GoTrip.</p>
+          <div class="testimonial__author">
+            <span class="testimonial__avatar" aria-hidden="true">AO</span>
+            <div>
+              <div class="testimonial__name">Amara Okafor</div>
+              <div class="testimonial__geo">Lagos, Nigeria</div>
+            </div>
+          </div>
+        </article>
+
       </div>
     </section>
 
     <section class="exploring exploring__container">
-      <div class=exploring__block>
+      <div class="exploring__block" data-aos="zoom-in">
         <h2 class="exploring__title">Prepare Yourself And
           Start Exploring With Us.</h2>
         <p class="exploring__subtitle">There's the best discount for you today.</p>
         <div class="exploring__button">
-          <a class="exploring__link" href="#" target="__blank">Get Started</a>
+          <a class="exploring__link" href="pricing.html">Get Started</a>
         </div>
 
         <div class="eclipse-scene eclipse-scene__main-3">
           <div class="eclipse-scene__big-exploring" data-aos="zoom-in" data-aos-delay="500">
-            <svg width="41" height="41" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="41" height="41" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle opacity="0.5" cx="15.5" cy="15.5" r="15.5" fill="#FFBDA7" />
             </svg>
 
           </div>
           <div class="eclipse-scene__middle-exploring" data-aos="zoom-in" data-aos-delay="300">
-            <svg width="27" height="27" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="27" height="27" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle opacity="0.5" cx="10.5" cy="10.5" r="10.5" fill="#FFBDA7" />
             </svg>
 
           </div>
           <div class="eclipse-scene__little-exploring" data-aos="zoom-in" data-aos-delay="100">
-            <svg width="22" height="22" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle opacity="0.5" cx="8.5" cy="8.5" r="8.5" fill="#FFBDA7" />
             </svg>
           </div>
@@ -349,19 +409,19 @@
 
         <div class="eclipse-scene eclipse-scene__main-4">
           <div class="eclipse-scene__big-exploring" data-aos="zoom-in" data-aos-delay="500">
-            <svg width="41" height="41" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="41" height="41" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle opacity="0.5" cx="15.5" cy="15.5" r="15.5" fill="#FFBDA7" />
             </svg>
 
           </div>
           <div class="eclipse-scene__middle-exploring" data-aos="zoom-in" data-aos-delay="300">
-            <svg width="27" height="27" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="27" height="27" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle opacity="0.5" cx="10.5" cy="10.5" r="10.5" fill="#FFBDA7" />
             </svg>
 
           </div>
           <div class="eclipse-scene__little-exploring" data-aos="zoom-in" data-aos-delay="100">
-            <svg width="22" height="22" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle opacity="0.5" cx="8.5" cy="8.5" r="8.5" fill="#FFBDA7" />
             </svg>
           </div>
@@ -371,108 +431,136 @@
     </section>
 
     <section class="subscripe subscripe__container">
-      <h2 class="subscripe__title">
+      <h2 class="subscripe__title" data-aos="fade-up">
         Subscribe <br>
         To Our Newsletter</h2>
-      <form action="" method="POST" class="subscripe__block">
-        <input type="text" class="subscripe__input" placeholder="Yourmail@mail.com">
+      <form action="#" method="POST" class="subscripe__block" data-aos="fade-up" data-aos-delay="100" data-success="Thanks for subscribing to our newsletter!" data-success-mode="toast">
+        <label class="visually-hidden" for="subscribe-email">Your email</label>
+        <input id="subscribe-email" name="email" type="email" required class="subscripe__input" placeholder="your@email.com">
         <button type="submit" class="subscripe__button">Subscribe</button>
       </form>
     </section>
+
+    </main>
 
   </div>
 
   <footer class="footer">
   <div class="footer__container">
-    <div class="footer__copy-header">
 
-      <div class="footer__block-logo">
-        <a data-aos="zoom-in" tabindex="2" class="footer__logo" href="index.html">
-          GoTrip
-        </a>
-      </div>
+    <div class="footer__top">
 
-      <div class="footer__block-nav">
-        <div class="menu__body">
-
-          <nav class="menu__nav">
-            <ul class="menu__list">
-              <li tabindex="1" class="menu__list-link menu__list-link-1">
-                <a class="menu__link" href="#">Home</a>
-              </li>
-
-              <li tabindex="2" class="menu__list-link menu__list-link-2">
-                <a class="menu__link" href="#">Services</a>
-              </li>
-
-              <li tabindex="3" class="menu__list-link menu__list-link-3">
-                <a class="menu__link" href="#"> Pricing</a>
-              </li>
-
-              <li tabindex="4" class="menu__list-link menu__list-link-4">
-                <a class="menu__link" href="#">Contack</a>
-              </li>
-            </ul>
-          </nav>
+      <div class="footer__brand">
+        <a class="footer__logo" href="index.html">Go<span>Trip</span></a>
+        <p class="footer__tagline">
+          Explore the natural beauty of the world with us. Guided trips,
+          hand-picked destinations and adventures you'll remember for life.
+        </p>
+        <div class="footer__socials" aria-label="Social links">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 22v-8h2.7l.4-3.2H13V8.7c0-.9.3-1.6 1.7-1.6h1.6V4.2c-.8-.1-1.7-.2-2.6-.2-2.6 0-4.3 1.6-4.3 4.4v2.4H6.7V14h2.7v8H13z"/></svg>
+          </a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-.9 0-1.4.2-1.7.3-.4.2-.7.4-1 .7-.3.3-.5.6-.7 1-.1.3-.3.8-.3 1.7-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c0 .9.2 1.4.3 1.7.2.4.4.7.7 1 .3.3.6.5 1 .7.3.1.8.3 1.7.3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c.9 0 1.4-.2 1.7-.3.4-.2.7-.4 1-.7.3-.3.5-.6.7-1 .1-.3.3-.8.3-1.7.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c0-.9-.2-1.4-.3-1.7-.2-.4-.4-.7-.7-1-.3-.3-.6-.5-1-.7-.3-.1-.8-.3-1.7-.3-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 8a3.1 3.1 0 100-6.2 3.1 3.1 0 000 6.2zm6.3-8.2a1.1 1.1 0 11-2.3 0 1.1 1.1 0 012.3 0z"/></svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" title="Twitter">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 5.9c-.7.3-1.5.5-2.3.6.8-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1A4.1 4.1 0 0015.6 4c-2.3 0-4.1 1.8-4.1 4.1 0 .3 0 .6.1.9-3.4-.2-6.4-1.8-8.5-4.3-.4.6-.6 1.3-.6 2.1 0 1.4.7 2.7 1.8 3.4-.6 0-1.3-.2-1.8-.5v.1c0 2 1.4 3.6 3.3 4-.3.1-.7.2-1.1.2-.3 0-.5 0-.8-.1.5 1.6 2 2.8 3.8 2.8a8.3 8.3 0 01-5.1 1.8H2a11.6 11.6 0 006.3 1.8c7.5 0 11.7-6.3 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2.2z"/></svg>
+          </a>
+          <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.5a3 3 0 00-2.1-2.1C19 4.9 12 4.9 12 4.9s-7 0-8.9.5A3 3 0 001 7.5C.5 9.4.5 12 .5 12s0 2.6.5 4.5a3 3 0 002.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 002.1-2.1c.5-1.9.5-4.5.5-4.5s0-2.6-.5-4.5zM9.8 15.3V8.7l5.7 3.3-5.7 3.3z"/></svg>
+          </a>
         </div>
       </div>
 
-      <div class="log-in-out footer__log-in-out">
-        <div tabindex="9" class="menu__list-link-login">
-          <a class="menu__link menu__login" href="#">Sign up</a>
-        </div>
+      <div class="footer__col">
+        <h3 class="footer__col-title">Explore</h3>
+        <ul class="footer__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
 
-        <div tabindex="10" class="menu__list-link-sign-up">
-          <a class="menu__link menu__sign-up" href="#">Login</a>
-        </div>
+      <div class="footer__col">
+        <h3 class="footer__col-title">Account</h3>
+        <ul class="footer__list">
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Sign up</a></li>
+          <li><a href="help.html">Help center</a></li>
+          <li><a href="privacy.html">Privacy policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__col-title">Get in touch</h3>
+        <ul class="footer__contact">
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>
+            <a href="https://www.google.com/maps/search/?api=1&query=Halmahera%2C%20North%20Maluku%2C%20Indonesia" target="_blank" rel="noopener noreferrer">Halmahera, North Maluku, Indonesia</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg>
+            <a href="tel:+18001234567">+1 800 123 45 67</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <a href="mailto:hello@gotrip.com">hello@gotrip.com</a>
+          </li>
+        </ul>
       </div>
 
     </div>
 
-    <div class="footer__security-police">
-      <p> &copy; 2021 Go Trip</p>
+    <div class="footer__bottom">
+      <p>&copy; 2026 <strong>GoTrip</strong>. All rights reserved.</p>
+      <nav class="footer__legal" aria-label="Legal">
+        <a href="privacy.html">Privacy policy</a>
+        <a href="help.html">Help center</a>
+      </nav>
     </div>
 
   </div>
 </footer>
 
+
   <!-- ======== Spoiler ======== -->
-  <!-- <script src="js/plugins_spollers_acordeon.min.js?_v=20211227210740"></script> -->
+  <!-- <script src="js/plugins_spollers_acordeon.min.js?_v=20260630002117"></script> -->
 
   <!-- ======== Switch item menu in slider ======== -->
-  <!-- <script src="js/plugins_switch_slider_menu_item.min.js?_v=20211227210740"></script> -->
+  <!-- <script src="js/plugins_switch_slider_menu_item.min.js?_v=20260630002117"></script> -->
 
   <!-- ======== Switch item menu in slider for 3 item ======== -->
-  <!-- <script src="js/plugins_switch_slider_menu_item_for_3.min.js?_v=20211227210740"></script> -->
+  <!-- <script src="js/plugins_switch_slider_menu_item_for_3.min.js?_v=20260630002117"></script> -->
 
   <!-- ======== Swiper ======== -->
-  <script src="plugins/swiper/dist/swiper_bundle.min.js?_v=20211227210740"></script>
+  <script src="plugins/swiper/dist/swiper_bundle.min.js?_v=20260630002117"></script>
   <!-- ======== Init slider for index ======== -->
-  <!-- <script src="plugins/swiper/js/slider_init_index.min.js?_v=20211227210740"></script> -->
+  <!-- <script src="plugins/swiper/js/slider_init_index.min.js?_v=20260630002117"></script> -->
 
   <!-- ======== Init slider for other page======== -->
-  <!-- <script src="plugins/swiper/js/slider_init_version_2.min.js?_v=20211227210740"></script> -->
+  <!-- <script src="plugins/swiper/js/slider_init_version_2.min.js?_v=20260630002117"></script> -->
 
   <!-- ======== AOS Script ======== -->
-  <script src="plugins/aos/dist/aos.min.js?_v=20211227210740"></script>
+  <script src="plugins/aos/dist/aos.min.js?_v=20260630002117"></script>
 
   <!-- ======== AOS Script Init ======== -->
-  <script src="plugins/aos/js/aos_init.min.js?_v=20211227210740"></script>
+  <script src="plugins/aos/js/aos_init.min.js?_v=20260630002117"></script>
 
   <!-- ======== Anime Script  ======== -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js?_v=20211227210740"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js?_v=20260630002117"></script> -->
 
   <!-- ======== Anime Script Init ======== -->
-  <!-- <script src="plugins/anime/anime_init.js?_v=20211227210740"></script> -->
+  <!-- <script src="plugins/anime/anime_init.js?_v=20260630002117"></script> -->
 
   <!-- ======== Bootstrap script ======== -->
-  <!-- <script src="plugins/bootstrap_5.1.0/dist/js/bootstrap.min.js?_v=20211227210740"></script> -->
+  <!-- <script src="plugins/bootstrap_5.1.0/dist/js/bootstrap.min.js?_v=20260630002117"></script> -->
 
   <!-- ======== Parallax effect ======== -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js?_v=20211227210740"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js?_v=20260630002117"></script>
 
   <!-- ======== Main Script ======== -->
-  <script src="js/app.min.js?_v=20211227210740"></script>
+  <script src="js/app.min.js?_v=20260630002117"></script>
   
 </body>
 

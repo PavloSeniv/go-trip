@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+@@include('html/head.html',{
+  "title": "Contact — GoTrip"
+})
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="__container">
+
+    @@include('html/_header_grid.html')
+
+    <main id="main">
+
+      <section class="page-banner">
+        <div class="decor decor--dots decor-1"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <svg aria-hidden="true" focusable="false" class="decor decor--wave decor-2" viewBox="0 0 90 39" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.6" d="M7 32 21.8 17.4c5.8-5.8 15.2-5.8 21 0l4.3 4.2c5.8 5.8 15.2 5.8 21 0L83 7" stroke="currentColor" stroke-width="13" stroke-linecap="round"/></svg>
+        <div class="decor decor--dots decor-3"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+        <h1 class="page-banner__title">Get In Touch</h1>
+        <p class="page-banner__crumbs"><a href="index.html">Home</a> / <span>Contact</span></p>
+      </section>
+
+      <section class="section">
+        <div class="shell">
+          <div class="contact">
+
+            <div class="contact__info" data-aos="fade-right">
+              <div class="section-head">
+                <span class="section-head__eyebrow">Contact us</span>
+                <h2 class="section-head__title">Let's plan your <span>journey</span></h2>
+                <p class="section-head__text">Have a question or a custom trip in mind? Drop us a line — we usually reply within a few hours.</p>
+              </div>
+
+              <div class="contact__item">
+                <span class="contact__icon">📍</span>
+                <div>
+                  <div class="contact__label">Our office</div>
+                  <div class="contact__value"><a href="https://www.google.com/maps/search/?api=1&query=Halmahera%2C%20North%20Maluku%2C%20Indonesia" target="_blank" rel="noopener noreferrer">Halmahera, North Maluku, Indonesia</a></div>
+                </div>
+              </div>
+              <div class="contact__item">
+                <span class="contact__icon">✉️</span>
+                <div>
+                  <div class="contact__label">Email us</div>
+                  <div class="contact__value"><a href="mailto:hello@gotrip.com">hello@gotrip.com</a></div>
+                </div>
+              </div>
+              <div class="contact__item">
+                <span class="contact__icon">📞</span>
+                <div>
+                  <div class="contact__label">Call us</div>
+                  <div class="contact__value"><a href="tel:+18001234567">+1 800 123 45 67</a></div>
+                </div>
+              </div>
+            </div>
+
+            <form class="contact__form" action="#" method="POST" data-aos="fade-left" data-success="Thank you for reaching out! We've received your message and will get back to you shortly.">
+              <div class="contact__grid">
+                <div class="field">
+                  <label class="field__label" for="c-name">Full name</label>
+                  <input class="field__input" id="c-name" name="name" type="text" placeholder="Jane Doe" required>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="c-email">Email</label>
+                  <input class="field__input" id="c-email" name="email" type="email" placeholder="jane@email.com" required>
+                </div>
+              </div>
+              <div class="field">
+                <label class="field__label" for="c-subject">Subject</label>
+                <input class="field__input" id="c-subject" name="subject" type="text" placeholder="I'd like to know more about…">
+              </div>
+              <div class="field">
+                <label class="field__label" for="c-message">Message</label>
+                <textarea class="field__input" id="c-message" name="message" placeholder="Tell us about your dream trip…" required></textarea>
+              </div>
+              <button class="btn btn--primary btn--block" type="submit">Send message</button>
+            </form>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  @@include('html/_footer.html')
+
+  <script src="plugins/aos/dist/aos.min.js"></script>
+  <script src="plugins/aos/js/aos_init.min.js"></script>
+  <script src="js/app.min.js"></script>
+
+</body>
+</html>
